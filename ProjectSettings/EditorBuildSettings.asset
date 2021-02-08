@@ -23,4 +23,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/NextMindSDK/Examples/SDKDiscovery/SDKDiscovery_VR.unity
     guid: 8e71a1ff046200b468f6c7425bbbb159
-  m_configObjects: {}
+  m_configObjects:
+    Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dbd68623e31551b4fa10bb64778657b6,
+      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 9027f3e265a2bcf4ca9d4112d8846ce3,
+      type: 2}
