@@ -25,6 +25,8 @@ public class SelectionObject : MonoBehaviour
         copy.GetComponent<Outline>().OutlineWidth = 10f;
 
         parent = transform.parent.parent; //This assignes to the variable parent the correspondent trasform
+
+
     }
 
     private void Update()

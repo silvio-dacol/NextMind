@@ -166,5 +166,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberSelectables: 8
   radius: 3
-  gameObject: {fileID: 5739411911918428905, guid: c01016250fa73e144aefe7f9d7287dcf,
-    type: 3}
+  element: {fileID: 5739411911918428905, guid: c01016250fa73e144aefe7f9d7287dcf, type: 3}
