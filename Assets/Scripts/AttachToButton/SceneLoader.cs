@@ -6,12 +6,12 @@ using UnityEngine.Events;
 
 //Script to be attached to the button: be sure the name of button and name of the scene coincide
 
-public class TaskLoader : MonoBehaviour
+public class SceneLoader : MonoBehaviour
 {
-    public bool startOverallSceneTime;
-    public bool startTaskExercise;
+    //public bool startOverallSceneTime;
+    //public bool startTaskExercise;
 
-    public void LoadTask()
+    public void LoadScene()
     {
         //I get and store all the scenes in an array
         int countLoaded = SceneManager.sceneCount;
@@ -22,10 +22,10 @@ public class TaskLoader : MonoBehaviour
             loadedScenes[i] = SceneManager.GetSceneAt(i);
         }
 
-        //I unload the loaded scenes except the MainMenu one (which contains the essential things)
+        //I unload the loaded scenes except the General one (which contains the essential things)
         for(int i = 0; i < countLoaded; i++)
         {
-            if(loadedScenes[i].name != "MainMenu")
+            if(loadedScenes[i].name != "General")
             {
                 SceneManager.UnloadSceneAsync(loadedScenes[i].name);
             }
@@ -35,7 +35,7 @@ public class TaskLoader : MonoBehaviour
         SceneManager.LoadSceneAsync(gameObject.name, LoadSceneMode.Additive);
 
         //For the future, see how to implement the passing of time
-        startOverallSceneTime = true;
-        startTaskExercise = true;
+        //startOverallSceneTime = true;
+        //startTaskExercise = true;
     }
 }
