@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &1752013925332873871
+--- !u!1001 &7042678865962861042
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -65,12 +65,24 @@ PrefabInstance:
     - target: {fileID: 4163933821597648519, guid: 80ad3f504073fc64f90be15c9be7cbab,
         type: 3}
       propertyPath: m_Name
-      value: ButtonTask3
+      value: NextMindCalibration
       objectReference: {fileID: 0}
     - target: {fileID: 5284347949416021063, guid: 80ad3f504073fc64f90be15c9be7cbab,
         type: 3}
       propertyPath: m_text
-      value: Task 3
+      value: 'NextMind
+
+        Calibration'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5284347949416021063, guid: 80ad3f504073fc64f90be15c9be7cbab,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 0.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 5284347949416021063, guid: 80ad3f504073fc64f90be15c9be7cbab,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.21
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80ad3f504073fc64f90be15c9be7cbab, type: 3}

@@ -251,8 +251,9 @@ GameObject:
   - component: {fileID: 8154535188948497484}
   - component: {fileID: 341441921353157215}
   - component: {fileID: 5369765832067155249}
+  - component: {fileID: -8539795117029659040}
   m_Layer: 5
-  m_Name: ButtonBase
+  m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -474,6 +475,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   routingTarget: {fileID: 4060818571848409547}
   InteractableOnClick: 1
+--- !u!114 &-8539795117029659040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4163933821597648519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24233aa52a4a2ee46af6df49aeac7aef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4163986279634950225
 GameObject:
   m_ObjectHideFlags: 0

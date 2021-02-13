@@ -7,6 +7,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4060818571848409547, guid: 80ad3f504073fc64f90be15c9be7cbab,
+        type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4060818571848409547, guid: 80ad3f504073fc64f90be15c9be7cbab,
+        type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4060818571848409547, guid: 80ad3f504073fc64f90be15c9be7cbab,
+        type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 37289202114588563}
+    - target: {fileID: 4060818571848409547, guid: 80ad3f504073fc64f90be15c9be7cbab,
+        type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4060818571848409547, guid: 80ad3f504073fc64f90be15c9be7cbab,
+        type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadTask
+      objectReference: {fileID: 0}
+    - target: {fileID: 4060818571848409547, guid: 80ad3f504073fc64f90be15c9be7cbab,
+        type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4161914280275382559, guid: 80ad3f504073fc64f90be15c9be7cbab,
         type: 3}
       propertyPath: m_RootOrder
@@ -65,7 +95,7 @@ PrefabInstance:
     - target: {fileID: 4163933821597648519, guid: 80ad3f504073fc64f90be15c9be7cbab,
         type: 3}
       propertyPath: m_Name
-      value: ButtonTask1
+      value: Task1
       objectReference: {fileID: 0}
     - target: {fileID: 5284347949416021063, guid: 80ad3f504073fc64f90be15c9be7cbab,
         type: 3}
@@ -74,3 +104,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80ad3f504073fc64f90be15c9be7cbab, type: 3}
+--- !u!114 &37289202114588563 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -8539795117029659040, guid: 80ad3f504073fc64f90be15c9be7cbab,
+    type: 3}
+  m_PrefabInstance: {fileID: 718596556771262963}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24233aa52a4a2ee46af6df49aeac7aef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
