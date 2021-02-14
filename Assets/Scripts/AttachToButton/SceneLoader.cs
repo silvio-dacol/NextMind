@@ -13,7 +13,7 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadScene()
     {
-        //I get and store all the scenes in an array
+        //I get and store all the loaded scenes in an array
         int countLoaded = SceneManager.sceneCount;
         Scene[] loadedScenes = new Scene[countLoaded];
 
