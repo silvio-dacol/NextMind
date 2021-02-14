@@ -77,5 +77,25 @@ PrefabInstance:
       propertyPath: startDimensionIndex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7603828529218359270, guid: b74f6f97325c93e4a96a0fad09e6f236,
+        type: 3}
+      propertyPath: Events.Array.data[1].Event.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextMindTriggerOn
+      objectReference: {fileID: 0}
+    - target: {fileID: 7603828529218359270, guid: b74f6f97325c93e4a96a0fad09e6f236,
+        type: 3}
+      propertyPath: Events.Array.data[1].Settings.Array.data[0].EventValue.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextMindTriggerOff
+      objectReference: {fileID: 0}
+    - target: {fileID: 7603828529218359270, guid: b74f6f97325c93e4a96a0fad09e6f236,
+        type: 3}
+      propertyPath: Events.Array.data[1].Event.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7603828529218359270, guid: b74f6f97325c93e4a96a0fad09e6f236,
+        type: 3}
+      propertyPath: Events.Array.data[1].Settings.Array.data[0].EventValue.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b74f6f97325c93e4a96a0fad09e6f236, type: 3}

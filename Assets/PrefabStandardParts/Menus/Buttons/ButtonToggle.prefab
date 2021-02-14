@@ -714,6 +714,7 @@ GameObject:
   - component: {fileID: 6121002704317256366}
   - component: {fileID: 2975122856048033928}
   - component: {fileID: 2557752039447995358}
+  - component: {fileID: 7690060618202796220}
   m_Layer: 5
   m_Name: ButtonToggle
   m_TagString: Untagged
@@ -831,7 +832,7 @@ MonoBehaviour:
   - Event:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 7690060618202796220}
           m_MethodName: 
           m_Mode: 1
           m_Arguments:
@@ -874,7 +875,7 @@ MonoBehaviour:
       EventValue:
         m_PersistentCalls:
           m_Calls:
-          - m_Target: {fileID: 0}
+          - m_Target: {fileID: 7690060618202796220}
             m_MethodName: 
             m_Mode: 1
             m_Arguments:
@@ -998,3 +999,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   routingTarget: {fileID: 7603828529218359270}
   InteractableOnClick: 1
+--- !u!114 &7690060618202796220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7502393871378044252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 634e8987ac4226a42bcc082386b1e209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
