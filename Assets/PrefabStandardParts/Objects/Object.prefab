@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5213945898388478911}
   - component: {fileID: 5102508978826790972}
   - component: {fileID: 2457771619596634585}
+  - component: {fileID: 7002063000174028264}
   m_Layer: 0
   m_Name: Object
   m_TagString: Untagged
@@ -163,9 +164,9 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5161095782556264844}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 7002063000174028264}
+        m_MethodName: IncreaseSelectionCount
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -177,6 +178,18 @@ MonoBehaviour:
   Events: []
   resetOnDestroy: 0
   enabledOnStart: 1
+--- !u!114 &7002063000174028264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2338091087294828411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9130c69730ff9cc43b60e6d5e831817e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5161095782556264844
 GameObject:
   m_ObjectHideFlags: 0
