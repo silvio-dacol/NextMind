@@ -10,25 +10,6 @@ using NextMind.NeuroTags;
 
 public class ObjectSelectionTriggered : MonoBehaviour
 {
-    //CheckSelectionCorrectness checkSelectionCorrectness;
-    //UnityEvent myEvent;
-    //int selectionCount;
-
-    //private void Start()
-    //{
-    //    checkSelectionCorrectness = FindObjectOfType<CheckSelectionCorrectness>();
-
-    //    selectionCount = checkSelectionCorrectness.selectionCount;
-
-    //    if (myEvent == null)
-    //    {
-    //        myEvent = gameObject.GetComponent<Interactable>().OnClick;
-    //    }
-
-    //    myEvent.AddListener(IncreaseSelectionCount);
-    //}
-
-
     public void IncreaseSelectionCount()
     {
         CheckSelectionCorrectness checkSelectionCorrectness = FindObjectOfType<CheckSelectionCorrectness>();
