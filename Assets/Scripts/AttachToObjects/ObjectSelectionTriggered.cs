@@ -20,40 +20,16 @@ public class ObjectSelectionTriggered : MonoBehaviour
 
 
 
-
         //
-        //When the comparison starts, I call the RandomNumberGenerator to obtain a new randomNumber
+        //I measure the accuracy of selection by comparing if the selected object child number correspond with the randomNumber
 
-        RandomNumberGenerator randomNumberGenerator = FindObjectOfType<RandomNumberGenerator>();
-
-        randomNumberGenerator.RandomNumber();
+        //I store the objectIndex in a variable
+        int objectIndex;
 
         //I store in the variable RandomNumber the new value
         int randomNumber = usefulVariables.randomNumber;
 
-        //Provvisorioooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo per vedere se funzia
-        Transform objectContainer = GameObject.Find("ObjectContainer").transform;
-        Debug.Log("The new random number is " + objectContainer.GetChild(randomNumber).name);
-
-
-
-
-        //
-        //I increase the counter of the number of times an object is selected
-
-        usefulVariables.selectionCount = usefulVariables.selectionCount + 1;
-        //Debug.Log("The objects has been hit " + usefulVariables.selectionCount + " times");
-
-
-
-
-
-        //
-        //I measure the accuracy of selection by comparing if the selected object child number correspond with the randomNumber
-
-        int objectIndex;
-
-        //I save the objectIndex in a variable
+        //I save the index of the clicked object in the objectIndex variable
         objectIndex = gameObject.transform.GetSiblingIndex();
 
         //If the selected object is the right one, increase the rightObjectSelection
@@ -67,5 +43,45 @@ public class ObjectSelectionTriggered : MonoBehaviour
         {
             usefulVariables.wrongObjectSelection = usefulVariables.wrongObjectSelection + 1;
         }
+
+
+
+
+
+        //
+        //When the comparison finished, I call again the RandomNumberGenerator to obtain a new randomNumber
+
+        RandomNumberGenerator randomNumberGenerator = FindObjectOfType<RandomNumberGenerator>();
+
+        randomNumberGenerator.RandomNumber();
+
+        //Provvisorioooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo per vedere se funzia
+        Transform objectContainer = GameObject.Find("ObjectContainer").transform;
+        Debug.Log("The new random number is " + objectContainer.GetChild(usefulVariables.randomNumber).name);
+
+
+
+
+
+        //
+        //Now I activate the randomIdentifier of the new object and deactivate all the others
+        //Deactivate all the identifiers
+        for (int i = 0; i < objectContainer.childCount; i++)
+        {
+            objectContainer.GetChild(i).transform.Find("RandomIdentifier").gameObject.SetActive(false);
+        }
+
+        //Activate the one I need respect to the new random object
+        objectContainer.GetChild(usefulVariables.randomNumber).transform.Find("RandomIdentifier").gameObject.SetActive(true);
+
+
+
+
+
+        //
+        //I increase the counter of the number of times an object is selected
+
+        usefulVariables.selectionCount = usefulVariables.selectionCount + 1;
+        //Debug.Log("The objects has been hit " + usefulVariables.selectionCount + " times");
     }
 }

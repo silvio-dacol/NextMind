@@ -11,11 +11,19 @@ public class RandomNumberGenerator : MonoBehaviour
 {
     private void Start()
     {
+        //I get the ObjectContainer game object so that I'm able to count how many child it has
+        Transform objectContainer = GameObject.Find("ObjectContainer").transform;
+
+        //At the start I deactivate all the RandomIdentifiers over the object
+        for(int i = 1; i < objectContainer.childCount; i++)
+        {
+            objectContainer.GetChild(i).transform.Find("RandomIdentifier").gameObject.SetActive(false);
+        }
+
         //I get the UsefulVariable in a variable
         UsefulVariables usefulVariables = FindObjectOfType<UsefulVariables>();
 
-        //I print on the Console the first randomValue of the sequence
-        Debug.Log("The random number is " + usefulVariables.randomNumber);
+        Debug.Log("The new random number is " + objectContainer.GetChild(usefulVariables.randomNumber).name);
     }
 
     //It generates a random number between 0 and the number of children of the object container
