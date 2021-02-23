@@ -71,7 +71,7 @@ public class ObjectSelectionTriggered : MonoBehaviour
             objectContainer.GetChild(i).transform.Find("RandomIdentifier").gameObject.SetActive(false);
         }
 
-        //Activate the one I need respect to the new random object
+        //Activate the one I need respect to the new random object so that the user can understand which one he could select
         objectContainer.GetChild(usefulVariables.randomNumber).transform.Find("RandomIdentifier").gameObject.SetActive(true);
 
 
