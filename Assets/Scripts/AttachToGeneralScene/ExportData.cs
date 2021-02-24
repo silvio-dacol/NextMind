@@ -6,22 +6,34 @@ using System.IO;
 
 public class ExportData : MonoBehaviour
 {
-    private const string FILE_NAME = "MyFile.txt";
-
-    public static void Main(String[] args)
+    public void CreateFile()
     {
-        if (File.Exists(FILE_NAME))
-        {
-            Console.WriteLine("{0} already exists.", FILE_NAME);
+        // Specify a name for your folder.
+        string pathString = Application.dataPath + "/ExperimentData";
 
-            return;
+        //If the directory still not exist, create it
+        if(!File.Exists(pathString))
+        {
+            System.IO.Directory.CreateDirectory(pathString);
         }
 
-        StreamWriter sr = File.CreateText(FILE_NAME);
+        // Create a file name for the file you want to create.
+        string fileName = "Ciccio Benzina.txt";
 
-        sr.WriteLine("This is my file.");
-        sr.WriteLine("I can write ints {0} or floats {1}, and so on.", 1, 4.2);
+        // Use Combine to add the file name to the path.
+        pathString = System.IO.Path.Combine(pathString, fileName);
 
-        sr.Close();
+        //Create the actual file and control it doesn't exist
+        if(!File.Exists(pathString))
+        {
+            //File.WriteAllText will rewrite all the file if you let it do that
+            File.WriteAllText(pathString, "" +
+                "Date: " + DateTime.Now + "\n" +
+                "Name: " + "\n" +
+                "Age: " + "\n" +
+                "Gender: " + "\n" +
+                "\n" + 
+                "\n");
+        }
     }
 }

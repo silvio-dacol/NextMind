@@ -9,14 +9,8 @@ public class TurnAndColourChange : MonoBehaviour
 
     private void Start()
     {
-        //I move the Random Identifiers over the spawned object
-        //RandomIdentifierMover();
-
         //I change the colour of the RandomIdentifier
         ChangeColour();
-
-        //I deactivate all the Random Identifiers
-        //randomIdentifier.active = false;
     }
 
     void Update()
