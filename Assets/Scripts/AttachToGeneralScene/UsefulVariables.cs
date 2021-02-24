@@ -10,9 +10,13 @@ public class UsefulVariables : MonoBehaviour
     [Tooltip("How many objects has already been hit for that specific experiment")]
     public int selectionCount;
 
-    //RandomNumber
+    //RandomNumber for Object Selection
     [Tooltip("The random number for that turn")]
     public int randomNumber;
+
+    //File name where to store the data
+    [Tooltip("File where the data are stored for the single person")]
+    public string filePath = "";
 
     //Accuracy Count
     [Tooltip("How many objects did the user hit well?")]
