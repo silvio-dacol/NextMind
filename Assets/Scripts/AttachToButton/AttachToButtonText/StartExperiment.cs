@@ -33,6 +33,7 @@ public class StartExperiment : MonoBehaviour
             yield return new WaitForSeconds(waitTime);
         }
 
-        Destroy(gameObject.transform.parent.gameObject);
+        //I hide the button after the time is passed
+        gameObject.transform.parent.transform.localScale = new Vector3(0, 0, 0);
     }
 }

@@ -186,7 +186,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 552407526870191918}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c81d15bc0989de4f95a8cd2a07b6b39, type: 3}
+  m_Script: {fileID: 11500000, guid: 1644a78432b169547be185313847ed2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7125347056379520280
@@ -441,6 +441,7 @@ GameObject:
   - component: {fileID: 6888098155917988532}
   - component: {fileID: 1274315059732536794}
   - component: {fileID: 2170590697195865710}
+  - component: {fileID: 1021189491584367636}
   m_Layer: 5
   m_Name: Start
   m_TagString: Untagged
@@ -528,6 +529,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 4398541188427212610}
         m_MethodName: CountingTimer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1021189491584367636}
+        m_MethodName: TotalTimeInTheScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -696,6 +708,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d758bc7fd495f95448951dfd779abce0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1021189491584367636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7125601598889090668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db0bb756e9f0fe0458471b69254fa62f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7125613394738731150
