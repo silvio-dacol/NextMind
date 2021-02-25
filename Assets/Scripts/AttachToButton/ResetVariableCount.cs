@@ -13,11 +13,20 @@ public class ResetVariableCount : MonoBehaviour
         UsefulVariables usefulVariables = FindObjectOfType<UsefulVariables>();
 
         //I reset the variables in the UsefulVariables script
+
         usefulVariables.selectionCount = 0;
+
         usefulVariables.randomNumber = 0;
+
         usefulVariables.rightObjectSelection = 0;
+
         usefulVariables.wrongObjectSelection = 0;
+
         usefulVariables.totalTimeInTheScene = 0;
-        usefulVariables.timeOfSingleSelection = 0;
+        
+        for(int i = 0; i < usefulVariables.timeOfSingleSelection.Length; i++)
+        {
+            usefulVariables.timeOfSingleSelection[i] = 0;
+        }
     }
 }

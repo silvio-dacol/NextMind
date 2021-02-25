@@ -27,11 +27,12 @@ public class UsefulVariables : MonoBehaviour
     //Time Count
     [Tooltip("How much time did the user take in the scene?")]
     public float totalTimeInTheScene;
-    [Tooltip("How much time did the user take to do a selection task?")]
-    public float timeOfSingleSelection;
+    [Tooltip("How much time did the user take to do the single selection tasks? (Max 40 in a scene)")]
+    public float[] timeOfSingleSelection = new float[40];
 
     void Start()
     {
+        //I don't want this gameObject to be destroyed when changing scenes because I need it for the length of the experiment
         DontDestroyOnLoad(gameObject);
     }
 }

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5102508978826790972}
   - component: {fileID: 2457771619596634585}
   - component: {fileID: 7002063000174028264}
+  - component: {fileID: 7229407182069107516}
   m_Layer: 0
   m_Name: Object
   m_TagString: Untagged
@@ -116,6 +117,17 @@ MonoBehaviour:
   onTriggered:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 7229407182069107516}
+        m_MethodName: SingleSelectionTask
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 7002063000174028264}
         m_MethodName: IncreaseSelectionCount
         m_Mode: 1
@@ -175,6 +187,17 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 7229407182069107516}
+        m_MethodName: SingleSelectionTask
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 7002063000174028264}
         m_MethodName: IncreaseSelectionCount
         m_Mode: 1
@@ -199,6 +222,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9130c69730ff9cc43b60e6d5e831817e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7229407182069107516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2338091087294828411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5b6ea2679b5608419f771dca3e45bdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5161095782556264844
