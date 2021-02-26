@@ -23,7 +23,7 @@ public class ObjectSelectionTriggered : MonoBehaviour
         //
         //I measure the accuracy of selection by comparing if the selected object child number correspond with the randomNumber
 
-        //I store the objectIndex in a variable
+        //I define the objectIndex in a variable
         int objectIndex;
 
         //I store in the variable RandomNumber the new value
@@ -55,16 +55,15 @@ public class ObjectSelectionTriggered : MonoBehaviour
 
         randomNumberGenerator.RandomNumber();
 
-        //Provvisorioooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo per vedere se funzia
-        Transform objectContainer = GameObject.Find("ObjectContainer").transform;
-        Debug.Log("The new random number is " + objectContainer.GetChild(usefulVariables.randomNumber).name);
-
 
 
 
 
         //
         //Now I activate the randomIdentifier of the new object and deactivate all the others
+
+        Transform objectContainer = GameObject.Find("ObjectContainer").transform;
+
         //Deactivate all the identifiers
         for (int i = 0; i < objectContainer.childCount; i++)
         {
@@ -82,6 +81,5 @@ public class ObjectSelectionTriggered : MonoBehaviour
         //I increase the counter of the number of times an object is selected
 
         usefulVariables.selectionCount = usefulVariables.selectionCount + 1;
-        //Debug.Log("The objects has been hit " + usefulVariables.selectionCount + " times");
     }
 }

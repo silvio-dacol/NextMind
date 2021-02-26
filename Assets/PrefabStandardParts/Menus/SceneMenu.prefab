@@ -430,6 +430,66 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7087109805332536496}
     m_Modifications:
+    - target: {fileID: 5478948368485959283, guid: 90d5d33d9601a0b4cac331be79bfa1e2,
+        type: 3}
+      propertyPath: Events.Array.data[1].Event.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5478948368485959283, guid: 90d5d33d9601a0b4cac331be79bfa1e2,
+        type: 3}
+      propertyPath: Events.Array.data[1].Event.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5478948368485959283, guid: 90d5d33d9601a0b4cac331be79bfa1e2,
+        type: 3}
+      propertyPath: Events.Array.data[1].Event.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 212902275023353412}
+    - target: {fileID: 5478948368485959283, guid: 90d5d33d9601a0b4cac331be79bfa1e2,
+        type: 3}
+      propertyPath: Events.Array.data[1].Event.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5478948368485959283, guid: 90d5d33d9601a0b4cac331be79bfa1e2,
+        type: 3}
+      propertyPath: Events.Array.data[1].Event.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: HoloLensTriggerOff
+      objectReference: {fileID: 0}
+    - target: {fileID: 5478948368485959283, guid: 90d5d33d9601a0b4cac331be79bfa1e2,
+        type: 3}
+      propertyPath: Events.Array.data[1].Settings.Array.data[0].EventValue.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5478948368485959283, guid: 90d5d33d9601a0b4cac331be79bfa1e2,
+        type: 3}
+      propertyPath: Events.Array.data[1].Settings.Array.data[0].EventValue.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5478948368485959283, guid: 90d5d33d9601a0b4cac331be79bfa1e2,
+        type: 3}
+      propertyPath: Events.Array.data[1].Settings.Array.data[0].EventValue.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 212902275023353412}
+    - target: {fileID: 5478948368485959283, guid: 90d5d33d9601a0b4cac331be79bfa1e2,
+        type: 3}
+      propertyPath: Events.Array.data[1].Settings.Array.data[0].EventValue.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5478948368485959283, guid: 90d5d33d9601a0b4cac331be79bfa1e2,
+        type: 3}
+      propertyPath: Events.Array.data[1].Settings.Array.data[0].EventValue.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: HoloLensTriggerOn
+      objectReference: {fileID: 0}
+    - target: {fileID: 5478948368485959283, guid: 90d5d33d9601a0b4cac331be79bfa1e2,
+        type: 3}
+      propertyPath: Events.Array.data[1].Event.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5478948368485959283, guid: 90d5d33d9601a0b4cac331be79bfa1e2,
+        type: 3}
+      propertyPath: Events.Array.data[1].Settings.Array.data[0].EventValue.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5584483987960858885, guid: 90d5d33d9601a0b4cac331be79bfa1e2,
         type: 3}
       propertyPath: m_RootOrder
@@ -498,6 +558,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5603585554237370221}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &212902275023353412 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5708187333262022953, guid: 90d5d33d9601a0b4cac331be79bfa1e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 5603585554237370221}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 634e8987ac4226a42bcc082386b1e209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7500048418120264951
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -640,6 +712,71 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5889242235233119467, guid: 627a558b3ee8cfd4ab5912254838aa29,
+        type: 3}
+      propertyPath: startDimensionIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889242235233119467, guid: 627a558b3ee8cfd4ab5912254838aa29,
+        type: 3}
+      propertyPath: Events.Array.data[1].Event.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889242235233119467, guid: 627a558b3ee8cfd4ab5912254838aa29,
+        type: 3}
+      propertyPath: Events.Array.data[1].Event.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889242235233119467, guid: 627a558b3ee8cfd4ab5912254838aa29,
+        type: 3}
+      propertyPath: Events.Array.data[1].Event.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 4557413222524750411}
+    - target: {fileID: 5889242235233119467, guid: 627a558b3ee8cfd4ab5912254838aa29,
+        type: 3}
+      propertyPath: Events.Array.data[1].Event.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889242235233119467, guid: 627a558b3ee8cfd4ab5912254838aa29,
+        type: 3}
+      propertyPath: Events.Array.data[1].Event.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: NextMindTriggerOff
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889242235233119467, guid: 627a558b3ee8cfd4ab5912254838aa29,
+        type: 3}
+      propertyPath: Events.Array.data[1].Settings.Array.data[0].EventValue.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889242235233119467, guid: 627a558b3ee8cfd4ab5912254838aa29,
+        type: 3}
+      propertyPath: Events.Array.data[1].Settings.Array.data[0].EventValue.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889242235233119467, guid: 627a558b3ee8cfd4ab5912254838aa29,
+        type: 3}
+      propertyPath: Events.Array.data[1].Settings.Array.data[0].EventValue.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 4557413222524750411}
+    - target: {fileID: 5889242235233119467, guid: 627a558b3ee8cfd4ab5912254838aa29,
+        type: 3}
+      propertyPath: Events.Array.data[1].Settings.Array.data[0].EventValue.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889242235233119467, guid: 627a558b3ee8cfd4ab5912254838aa29,
+        type: 3}
+      propertyPath: Events.Array.data[1].Settings.Array.data[0].EventValue.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: NextMindTriggerOn
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889242235233119467, guid: 627a558b3ee8cfd4ab5912254838aa29,
+        type: 3}
+      propertyPath: Events.Array.data[1].Event.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889242235233119467, guid: 627a558b3ee8cfd4ab5912254838aa29,
+        type: 3}
+      propertyPath: Events.Array.data[1].Settings.Array.data[0].EventValue.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 627a558b3ee8cfd4ab5912254838aa29, type: 3}
 --- !u!4 &4433991292077578855 stripped
@@ -648,6 +785,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7906993905797036538}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4557413222524750411 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5945989822554600369, guid: 627a558b3ee8cfd4ab5912254838aa29,
+    type: 3}
+  m_PrefabInstance: {fileID: 7906993905797036538}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 634e8987ac4226a42bcc082386b1e209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8147767627768050650
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -32,6 +32,9 @@ public class UsefulVariables : MonoBehaviour
 
     void Start()
     {
+        //Just initialising my array of the split time
+        timeOfSingleSelection = new float[40];
+
         //I don't want this gameObject to be destroyed when changing scenes because I need it for the length of the experiment
         DontDestroyOnLoad(gameObject);
     }

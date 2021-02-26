@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-//Attach this script to the Text object of the Button "Start Experiment"
+//Attach this script to the Text object of the Button "Start"
 
 //This script will display the timer from 3 to 0 to make the user aware that the experiment is starting
 //The button will then destroy
 
-public class StartExperiment : MonoBehaviour
+public class NumberTimerStart : MonoBehaviour
 {
     //Seconds that Unity waits before doing again what is specified in the method
     private float secondsToWait = 1.0f;

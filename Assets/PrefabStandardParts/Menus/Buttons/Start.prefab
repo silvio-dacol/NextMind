@@ -442,6 +442,7 @@ GameObject:
   - component: {fileID: 1274315059732536794}
   - component: {fileID: 2170590697195865710}
   - component: {fileID: 1021189491584367636}
+  - component: {fileID: 5558374578633785142}
   m_Layer: 5
   m_Name: Start
   m_TagString: Untagged
@@ -540,6 +541,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1021189491584367636}
         m_MethodName: TotalTimeInTheScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5558374578633785142}
+        m_MethodName: SwitchOnSelectionElements
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -720,6 +732,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db0bb756e9f0fe0458471b69254fa62f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: 0
+--- !u!114 &5558374578633785142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7125601598889090668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b3bfe20701ddf24fa80571f3dc45592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7125613394738731150

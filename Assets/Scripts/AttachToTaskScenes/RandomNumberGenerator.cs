@@ -14,16 +14,22 @@ public class RandomNumberGenerator : MonoBehaviour
         //I get the ObjectContainer game object so that I'm able to count how many child it has
         Transform objectContainer = GameObject.Find("ObjectContainer").transform;
 
-        //At the start I deactivate all the RandomIdentifiers over the object
-        for(int i = 1; i < objectContainer.childCount; i++)
-        {
-            objectContainer.GetChild(i).transform.Find("RandomIdentifier").gameObject.SetActive(false);
-        }
-
-        //I get the UsefulVariable in a variable
+        //I get the usefulVariables script (it contains all the variable needed to be stored)
         UsefulVariables usefulVariables = FindObjectOfType<UsefulVariables>();
 
-        Debug.Log("The new random number is " + objectContainer.GetChild(usefulVariables.randomNumber).name);
+        for (int i = 0; i < objectContainer.childCount; i++)
+        {
+            //At the start I deactivate all the RandomIdentifiers over the object
+            objectContainer.GetChild(i).transform.Find("RandomIdentifier").gameObject.SetActive(false);
+
+            //At the start I activate the Interactable components of all the objects
+            objectContainer.GetChild(i).GetComponent<Interactable>().enabled = true;
+            GameObject.Find("HoloLensToggle").GetComponent<Interactable>().IsToggled = true;
+
+            //At the start I deactivate the NeuroTag component of all the objects
+            objectContainer.GetChild(i).GetComponent<NeuroTag>().enabled = false;
+            GameObject.Find("NextMindToggle").GetComponent<Interactable>().IsToggled = false;
+        }
     }
 
     //It generates a random number between 0 and the number of children of the object container
