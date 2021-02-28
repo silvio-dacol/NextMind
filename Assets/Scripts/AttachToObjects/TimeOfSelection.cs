@@ -23,7 +23,7 @@ public class TimeOfSelection : MonoBehaviour
         //Just for the first selection task
         if(i == 0)
         {
-            usefulVariables.timeOfSingleSelection[i] = usefulVariables.totalTimeInTheScene;
+            usefulVariables.timeOfSingleSelection[i] = (float)System.Math.Round(usefulVariables.totalTimeInTheScene, 2);
         }
 
         //For all the other selection tasks I need to subtract the previous time to get the time of that specific selection
@@ -36,7 +36,7 @@ public class TimeOfSelection : MonoBehaviour
                 sumOfTheArrayTimes = sumOfTheArrayTimes + usefulVariables.timeOfSingleSelection[t];
             }
 
-            usefulVariables.timeOfSingleSelection[i] = usefulVariables.totalTimeInTheScene - sumOfTheArrayTimes;
+            usefulVariables.timeOfSingleSelection[i] = (float)System.Math.Round(usefulVariables.totalTimeInTheScene - sumOfTheArrayTimes, 2);
         }
     }
 }

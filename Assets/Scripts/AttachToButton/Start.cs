@@ -6,9 +6,18 @@ using UnityEngine;
 
 public class Start : MonoBehaviour
 {
+    private float secondsToWait = 4.0f;
+
     //This method creates a Random Number which will be assigned to the first element in the scene
     public void SwitchOnSelectionElements()
     {
+        StartCoroutine(Wait(secondsToWait));
+    }
+
+    IEnumerator Wait(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+
         //I get the ObjectContainer game object so that I'm able to count how many child it has
         Transform objectContainer = GameObject.Find("ObjectContainer").transform;
 

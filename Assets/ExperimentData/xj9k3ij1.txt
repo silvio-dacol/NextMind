@@ -1,0 +1,19 @@
+Date: 2021-02-28 5:39:26 PM
+Name: 
+Age: 
+Gender: 
+
+Task1
+
+Device:                      HoloLens
+Number of Selections:        10
+
+Accuracy:
+Right Selections:            8
+Wrong Selections:            2
+Right or Wrong:                 1  1  1  1  0  0  1  1  1  1
+
+Time:
+Total Time in the Scene:     24.00081
+Time per Selection:          2.14  4.65  2  3.04  1.1  2.35  0.76  4.43  2.1  1.43
+

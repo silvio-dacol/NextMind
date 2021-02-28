@@ -16,11 +16,18 @@ public class ResetVariableCount : MonoBehaviour
 
         usefulVariables.selectionCount = 0;
 
+        usefulVariables.device = "";
+
         usefulVariables.randomNumber = 0;
 
         usefulVariables.rightObjectSelection = 0;
 
         usefulVariables.wrongObjectSelection = 0;
+
+        for (int i = 0; i < usefulVariables.accuracyOfSingleSelection.Length; i++)
+        {
+            usefulVariables.accuracyOfSingleSelection[i] = 0;
+        }
 
         usefulVariables.totalTimeInTheScene = 0;
         

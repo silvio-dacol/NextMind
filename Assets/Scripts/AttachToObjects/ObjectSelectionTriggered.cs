@@ -35,13 +35,19 @@ public class ObjectSelectionTriggered : MonoBehaviour
         //If the selected object is the right one, increase the rightObjectSelection
         if(objectIndex == randomNumber)
         {
+            //I increase of one the wight object selection variable
             usefulVariables.rightObjectSelection = usefulVariables.rightObjectSelection + 1;
+
+            //I fill the corresponding array part with a 1 (right selection)
+            usefulVariables.accuracyOfSingleSelection[usefulVariables.selectionCount] = 1;
         }
 
         //If the selected object is the wrong one, increase the wrongObjectSelection
         else if(objectIndex != randomNumber)
         {
             usefulVariables.wrongObjectSelection = usefulVariables.wrongObjectSelection + 1;
+
+            usefulVariables.accuracyOfSingleSelection[usefulVariables.selectionCount] = 0;
         }
 
 

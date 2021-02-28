@@ -10,6 +10,10 @@ public class UsefulVariables : MonoBehaviour
     [Tooltip("How many objects has already been hit for that specific experiment")]
     public int selectionCount;
 
+    //Used device for that experiment
+    [Tooltip("Which of the two devices is used in the current experiment")]
+    public string device = "";
+
     //RandomNumber for Object Selection
     [Tooltip("The random number for that turn")]
     public int randomNumber;
@@ -23,17 +27,22 @@ public class UsefulVariables : MonoBehaviour
     public int rightObjectSelection;
     [Tooltip("How many objects did the user hit wrong?")]
     public int wrongObjectSelection;
+    [Tooltip("How many object were right selected and how many wrong selected? (Max 40 in a scene)")] //Returns: 1 (right) and 0 (wrong)
+    public int[] accuracyOfSingleSelection = new int[0];
 
     //Time Count
     [Tooltip("How much time did the user take in the scene?")]
     public float totalTimeInTheScene;
     [Tooltip("How much time did the user take to do the single selection tasks? (Max 40 in a scene)")]
-    public float[] timeOfSingleSelection = new float[40];
+    public float[] timeOfSingleSelection = new float[0];
 
     void Start()
     {
+        //Just initialising my array of the accuracy
+        accuracyOfSingleSelection = new int[numberOfSelections];
+
         //Just initialising my array of the split time
-        timeOfSingleSelection = new float[40];
+        timeOfSingleSelection = new float[numberOfSelections];
 
         //I don't want this gameObject to be destroyed when changing scenes because I need it for the length of the experiment
         DontDestroyOnLoad(gameObject);

@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using System.IO;
 
-public class ExportData : MonoBehaviour
+public class CreateParticipantFile : MonoBehaviour
 {
     //Method to Create the file I need at the OnClick() event of the StartExperiment button
     public void CreateFile()
@@ -39,11 +39,6 @@ public class ExportData : MonoBehaviour
                 "Gender: " + "\n" +
                 "\n");
         }
-    }
-
-    public void WriteDataOnFile()
-    {
-
     }
 
     //Method to create a random file.txt name

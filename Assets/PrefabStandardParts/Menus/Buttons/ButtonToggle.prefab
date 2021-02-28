@@ -715,6 +715,7 @@ GameObject:
   - component: {fileID: 2975122856048033928}
   - component: {fileID: 2557752039447995358}
   - component: {fileID: 7690060618202796220}
+  - component: {fileID: 8059773455597748857}
   m_Layer: 5
   m_Name: ButtonToggle
   m_TagString: Untagged
@@ -1009,5 +1010,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 634e8987ac4226a42bcc082386b1e209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8059773455597748857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7502393871378044252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6a92e4127bfa64b86af417d765c6c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

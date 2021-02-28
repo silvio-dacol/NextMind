@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6720780426262630933}
   - component: {fileID: 550240085918084662}
   - component: {fileID: 1332992025270428844}
-  - component: {fileID: 4398541188427212610}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -177,18 +176,6 @@ MonoBehaviour:
   m_maskType: 0
   _SortingLayerID: 0
   _SortingOrder: 0
---- !u!114 &4398541188427212610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 552407526870191918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1644a78432b169547be185313847ed2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7125347056379520280
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,6 +430,7 @@ GameObject:
   - component: {fileID: 2170590697195865710}
   - component: {fileID: 1021189491584367636}
   - component: {fileID: 5558374578633785142}
+  - component: {fileID: 3436128663457103824}
   m_Layer: 5
   m_Name: Start
   m_TagString: Untagged
@@ -528,7 +516,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4398541188427212610}
+      - m_Target: {fileID: 3436128663457103824}
         m_MethodName: CountingTimer
         m_Mode: 1
         m_Arguments:
@@ -745,6 +733,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b3bfe20701ddf24fa80571f3dc45592, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3436128663457103824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7125601598889090668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1644a78432b169547be185313847ed2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7125613394738731150
