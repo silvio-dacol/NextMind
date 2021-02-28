@@ -36,8 +36,7 @@ public class CreateParticipantFile : MonoBehaviour
                 "Date: " + DateTime.Now + "\n" +
                 "Name: " + "\n" +
                 "Age: " + "\n" +
-                "Gender: " + "\n" +
-                "\n");
+                "Gender: " + "\n\n\n");
         }
     }
 
