@@ -61,6 +61,12 @@ public class ObjectSelectionTriggered : MonoBehaviour
 
         randomNumberGenerator.RandomNumber();
 
+        //If the random number is equal to the previous one, do it again until is different
+        while(randomNumber == usefulVariables.randomNumber)
+        {
+            randomNumberGenerator.RandomNumber();
+        }
+
 
 
 
