@@ -2,17 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Attach this script to the task scenes
+
 public class SwitchOnObjectsMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
-        
-    }
+        Transform objectContainer = GameObject.Find("ObjectContainer").transform;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        for (int i = 0; i < objectContainer.childCount; i++)
+        {
+            if(gameObject.scene.name == "Task3")
+            {
+                objectContainer.GetChild(i).GetComponent<MoveObject>().enabled = true;
+            }
+
+            else
+            {
+                objectContainer.GetChild(i).GetComponent<MoveObject>().enabled = false;
+            }
+        }
     }
 }

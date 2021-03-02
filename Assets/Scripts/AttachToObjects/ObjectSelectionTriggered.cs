@@ -1,10 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.Events;
-using Microsoft.MixedReality.Toolkit.UI;
-using NextMind.NeuroTags;
+﻿using UnityEngine;
 
 //Script to be attached to the different objects in the scene
 
