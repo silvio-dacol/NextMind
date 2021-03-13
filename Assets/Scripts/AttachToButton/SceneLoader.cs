@@ -6,6 +6,8 @@ using UnityEngine.Events;
 
 //Script to be attached to the button: be sure the name of button and name of the scene coincide
 
+//Be careful because buttons GameObject names must be equivalent the same as the name of the scene to be loaded
+
 //If you are trying to attach this to the StartExperiment and ExitExperiment buttons, StartExperiment shall be in the General Scene
 
 public class SceneLoader : MonoBehaviour
