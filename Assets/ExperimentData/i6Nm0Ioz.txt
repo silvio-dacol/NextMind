@@ -1,0 +1,36 @@
+Date: 2021-03-14 7:45:07 PM
+Name: 
+Age: 
+Gender: 
+
+
+Task4
+
+Device:                      HoloLens
+Number of Selections:        5
+
+Accuracy:
+Right Selections:            5
+Wrong Selections:            0
+Right or Wrong:              1    1    1    1    1
+
+Time:
+Total Time in the Scene:     43.53164
+Time per Selection:          4.42    27.5    2.2    4.17    5.24
+
+
+Task2
+
+Device:                      NextMind
+Number of Selections:        5
+
+Accuracy:
+Right Selections:            5
+Wrong Selections:            0
+Right or Wrong:              1    1    1    1    1
+
+Time:
+Total Time in the Scene:     60.30434
+Time per Selection:          7.28    29.74    3.23    7.01    13.04
+
+

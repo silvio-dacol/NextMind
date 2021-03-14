@@ -12,7 +12,7 @@ public class SwitchOnObjectsMovement : MonoBehaviour
 
         for (int i = 0; i < objectContainer.childCount; i++)
         {
-            if(gameObject.scene.name == "Task3")
+            if(gameObject.scene.name == "Task3" || gameObject.scene.name == "Task4")
             {
                 objectContainer.GetChild(i).GetComponent<MoveObject>().enabled = true;
             }

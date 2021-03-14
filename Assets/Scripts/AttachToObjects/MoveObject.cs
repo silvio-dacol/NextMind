@@ -13,10 +13,10 @@ public class MoveObject : MonoBehaviour
     [SerializeField] private Vector3 normalisedPositionVector;
 
     [Tooltip("Speed to go from point A to point B")]
-    [SerializeField] private float speed = 0.2f;
+    [SerializeField] private float speed;
 
     [Tooltip("The range (+/-) used to access the vector direction")]
-    [SerializeField] private float range = 1f;
+    [SerializeField] private float range;
 
     //The index allowing to change direction back and forth
     private int changeDirectionIndex;
@@ -29,15 +29,26 @@ public class MoveObject : MonoBehaviour
 
     private void Start()
     {
-        //Initialisation in Start() just to be sure
-        speed = 0.2f;
-        range = 1.5f;
+        if(gameObject.scene.name == "Task3")
+        {
+            speed = 0.2f;
+            range = 1.5f;
+
+            //I define the deltaFrames to change direction just between 700 and 900
+            deltaFrames = Random.Range(700, 900);
+        }
+
+        if (gameObject.scene.name == "Task4")
+        {
+            speed = 0.6f;
+            range = 2f;
+
+            //I define the deltaFrames to change direction just between 700 and 900
+            deltaFrames = Random.Range(150, 300);
+        }
 
         //It's a random direction for the movement of that specific object
         deltaPosition = new Vector3(Random.Range(-range, range), Random.Range(-range, range), Random.Range(-range, range));
-
-        //I define the deltaFrames to change direction just between 700 and 900
-        deltaFrames = Random.Range(700,900);
 
         //This will be the actual direction of my movement
         normalisedPositionVector = deltaPosition.normalized;
