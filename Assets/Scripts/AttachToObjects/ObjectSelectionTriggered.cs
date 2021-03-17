@@ -94,10 +94,10 @@ public class ObjectSelectionTriggered : MonoBehaviour
         //
         //I get the SelectionSound script
 
-        SelectionSound selectioSound = FindObjectOfType<SelectionSound>();
+        SelectionSound selectionSound = FindObjectOfType<SelectionSound>();
 
         //
         //I play the sound everytime I select an object
-        selectioSound.Play();
+        selectionSound.Play();
     }
 }
