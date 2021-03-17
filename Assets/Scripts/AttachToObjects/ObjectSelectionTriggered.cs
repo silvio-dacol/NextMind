@@ -87,5 +87,17 @@ public class ObjectSelectionTriggered : MonoBehaviour
         //I increase the counter of the number of times an object is selected
 
         usefulVariables.selectionCount = usefulVariables.selectionCount + 1;
+
+
+
+
+        //
+        //I get the SelectionSound script
+
+        SelectionSound selectioSound = FindObjectOfType<SelectionSound>();
+
+        //
+        //I play the sound everytime I select an object
+        selectioSound.Play();
     }
 }
