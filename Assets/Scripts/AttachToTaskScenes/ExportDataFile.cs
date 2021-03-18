@@ -9,7 +9,9 @@ public class ExportDataFile : MonoBehaviour
 {
     UsefulVariables usefulVariables;
     int exit;
+    string boxOrNoBox;
     string accuracyOfSingleSelection;
+    string matrixCase;
     string timeOfSingleSelection;
 
     private void Start()
@@ -26,24 +28,28 @@ public class ExportDataFile : MonoBehaviour
         if (usefulVariables.selectionCount == usefulVariables.numberOfSelections && exit != 1)
         {
             //I create a string which can contain inside all the components of my arrays
+            boxOrNoBox = String.Join("    ", usefulVariables.boxOrNoBox);
             accuracyOfSingleSelection = String.Join("    ", usefulVariables.accuracyOfSingleSelection);
+            matrixCase = String.Join("    ", usefulVariables.matrixCase);
             timeOfSingleSelection = String.Join("    ", usefulVariables.timeOfSingleSelection);
 
             File.AppendAllText(usefulVariables.filePath, "" +
                 
                 gameObject.scene.name + "\n\n" +
                 
-                "Device:                      " + usefulVariables.device + "\n" +
-                "Number of Selections:        " + usefulVariables.numberOfSelections + "\n\n" +
+                "Device:                           " + usefulVariables.device + "\n" +
+                "Number of Selections:             " + usefulVariables.numberOfSelections + "\n\n" +
                 
                 "Accuracy:\n" + 
-                "Right Selections:            " + usefulVariables.rightObjectSelection + "\n" +
-                "Wrong Selections:            " + usefulVariables.wrongObjectSelection + "\n" +
-                "Right or Wrong:              " + accuracyOfSingleSelection + "\n\n" +
+                "Right Selections:                 " + usefulVariables.rightObjectSelection + "\n" +
+                "Wrong Selections:                 " + usefulVariables.wrongObjectSelection + "\n" +
+                "Signal is present? (Yellow Box)   " + boxOrNoBox +"\n" +
+                "Right or Wrong:                   " + accuracyOfSingleSelection + "\n" +
+                "Signal Detection Theory Case:     " + matrixCase + "\n\n" +
                 
                 "Time:\n" +
-                "Total Time in the Scene:     " + usefulVariables.totalTimeInTheScene + "\n" +
-                "Time per Selection:          " + timeOfSingleSelection.ToString() + "\n\n\n");
+                "Total Time in the Scene:          " + usefulVariables.totalTimeInTheScene + "\n" +
+                "Time per Selection:               " + timeOfSingleSelection.ToString() + "\n\n\n");
 
 
             //Now I just Load the MainMenu scene again

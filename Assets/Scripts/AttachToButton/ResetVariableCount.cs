@@ -29,6 +29,11 @@ public class ResetVariableCount : MonoBehaviour
             usefulVariables.accuracyOfSingleSelection[i] = 0;
         }
 
+        for (int i = 0; i < usefulVariables.matrixCase.Length; i++)
+        {
+            usefulVariables.matrixCase[i] = 0;
+        }
+
         usefulVariables.totalTimeInTheScene = 0;
         
         for(int i = 0; i < usefulVariables.timeOfSingleSelection.Length; i++)

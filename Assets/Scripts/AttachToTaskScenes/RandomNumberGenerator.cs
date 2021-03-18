@@ -30,6 +30,21 @@ public class RandomNumberGenerator : MonoBehaviour
             objectContainer.GetChild(i).GetComponent<NeuroTag>().enabled = false;
             GameObject.Find("NextMindToggle").GetComponent<Interactable>().IsToggled = false;
         }
+
+        //This for() controls if there will be the box or not on the objects
+        for (int i = 0; i < usefulVariables.numberOfSelections; i++)
+        {
+            //There will be the 70% possibilities to be in the case of a box and the 30% not to be
+            if (Random.Range(0, 10) < 7)
+            {
+                usefulVariables.boxOrNoBox[i] = 1;
+            }
+
+            else
+            {
+                usefulVariables.boxOrNoBox[i] = 0;
+            }
+        }
     }
 
     //It generates a random number between 0 and the number of children of the object container
@@ -42,6 +57,6 @@ public class RandomNumberGenerator : MonoBehaviour
         Transform objectContainer = GameObject.Find("ObjectContainer").transform;
 
         //I get a random game object between the child of the parent ObjectContainer
-        usefulVariables.randomNumber = Random.Range(0, objectContainer.childCount);
+        usefulVariables.randomNumber = Random.Range(0, objectContainer.childCount - 1);
     }   
 }

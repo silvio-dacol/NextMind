@@ -1,0 +1,23 @@
+Date: 2021-03-18 5:04:10 PM
+Name: 
+Age: 
+Gender: 
+
+
+Task1
+
+Device:                           HoloLens
+Number of Selections:             5
+
+Accuracy:
+Right Selections:                 5
+Wrong Selections:                 0
+Signal is present? (Yellow Box)   1    1    1    1    1
+Right or Wrong:                   1    1    1    1    1
+Signal Detection Theory Case:     11    11    11    11    11
+
+Time:
+Total Time in the Scene:          35.72211
+Time per Selection:               3.44    7.19    8.46    8.9    7.73
+
+

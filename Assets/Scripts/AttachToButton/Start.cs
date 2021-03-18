@@ -29,7 +29,11 @@ public class Start : MonoBehaviour
 
         randomNumberGenerator.RandomNumber();
 
-        //Activate the one I need respect to the new random object so that the user can understand which one he could select
-        objectContainer.GetChild(usefulVariables.randomNumber).transform.Find("RandomIdentifier").gameObject.SetActive(true);
+        //If the usefulVariables.boxOrNoBox == 1 activate the box over the element (Just in that case)
+        if(usefulVariables.boxOrNoBox[0] == 1)
+        {
+            //Activate the one I need respect to the new random object so that the user can understand which one he could select
+            objectContainer.GetChild(usefulVariables.randomNumber).transform.Find("RandomIdentifier").gameObject.SetActive(true);
+        }
     }
 }

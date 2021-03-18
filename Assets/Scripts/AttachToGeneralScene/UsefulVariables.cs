@@ -27,13 +27,19 @@ public class UsefulVariables : MonoBehaviour
     public int rightObjectSelection;
     [Tooltip("How many objects did the user hit wrong?")]
     public int wrongObjectSelection;
-    [Tooltip("How many object were right selected and how many wrong selected? (Max 40 in a scene)")] //Returns: 1 (right) and 0 (wrong)
+    [Tooltip("How many object were right selected and how many wrong selected?")] //Returns: 1 (right) and 0 (wrong)
     public int[] accuracyOfSingleSelection = new int[0];
+
+    //Signal Detection Theory
+    [Tooltip("Is there the Random Identifier over an object? 0 (No), 1 (Yes)")]
+    public int[] boxOrNoBox = new int[0];
+    [Tooltip("In which case of the 4x4 matrix am I? First number is the matrix row, Second number is the matrix column (11, 12, 21, 22")]
+    public int[] matrixCase = new int[0];
 
     //Time Count
     [Tooltip("How much time did the user take in the scene?")]
     public float totalTimeInTheScene;
-    [Tooltip("How much time did the user take to do the single selection tasks? (Max 40 in a scene)")]
+    [Tooltip("How much time did the user take to do the single selection tasks?")]
     public float[] timeOfSingleSelection = new float[0];
 
     void Start()
@@ -43,6 +49,10 @@ public class UsefulVariables : MonoBehaviour
 
         //Just initialising my array of the split time
         timeOfSingleSelection = new float[numberOfSelections];
+
+        //Signal Detection Theory Part
+        boxOrNoBox = new int[numberOfSelections];
+        matrixCase = new int[numberOfSelections];
 
         //I don't want this gameObject to be destroyed when changing scenes because I need it for the length of the experiment
         DontDestroyOnLoad(gameObject);

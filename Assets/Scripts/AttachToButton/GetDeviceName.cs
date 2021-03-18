@@ -19,7 +19,7 @@ public class GetDeviceName : MonoBehaviour
     void Update()
     {
         //I get the device name when the participant has already done some selections
-        if (usefulVariables.selectionCount == 5 && gameObject.GetComponent<Interactable>().IsToggled)
+        if (usefulVariables.selectionCount == 1 && gameObject.GetComponent<Interactable>().IsToggled)
         {
             usefulVariables.device = gameObject.transform.Find("Text").GetComponent<TMP_Text>().text;
         }
