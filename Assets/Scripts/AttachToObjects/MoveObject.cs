@@ -29,22 +29,29 @@ public class MoveObject : MonoBehaviour
 
     private void Start()
     {
-        if(gameObject.scene.name == "Task3")
+        if (gameObject.scene.name == "Task3")
         {
             speed = 0.2f;
-            range = 1.5f;
+            range = 0.2f;
 
             //I define the deltaFrames to change direction just between 700 and 900
             deltaFrames = Random.Range(700, 900);
         }
 
-        if (gameObject.scene.name == "Task4")
+        else if (gameObject.scene.name == "Task4")
         {
             speed = 0.6f;
-            range = 1.5f;
+            range = 0.2f;
 
             //I define the deltaFrames to change direction just between 700 and 900
             deltaFrames = Random.Range(150, 300);
+        }
+
+        if (gameObject.name == "NoBoxObject")
+        {
+            MoveObject moveObject = gameObject.GetComponent<MoveObject>();
+
+            Destroy(moveObject);
         }
 
         //It's a random direction for the movement of that specific object

@@ -146,7 +146,7 @@ public class ObjectSelectionTriggered : MonoBehaviour
             }
 
             //If the usefulVariables.boxOrNoBox == 1 activate the box over the element (Just in that case)
-            if (usefulVariables.boxOrNoBox[usefulVariables.boxOrNoBox[usefulVariables.selectionCount]] == 1)
+            if (usefulVariables.boxOrNoBox[usefulVariables.selectionCount] == 1)
             {
                 //Activate the one I need respect to the new random object so that the user can understand which one he could select
                 objectContainer.GetChild(usefulVariables.randomNumber).transform.Find("RandomIdentifier").gameObject.SetActive(true);
