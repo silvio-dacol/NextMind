@@ -5,13 +5,13 @@ using Microsoft.MixedReality.Toolkit.UI;
 
 //Attach this script to the objects in the task scene 
 
-public class LimitTime90Seconds : MonoBehaviour
+public class LimitTimeSelection : MonoBehaviour
 {
     //Define the usefulVariables class
     private UsefulVariables usefulVariables;
 
-    //Time limit of 90 seconds
-    private float timeLimit = 90f;
+    //Time limit of 120 seconds
+    private float timeLimit = 120f;
 
     void Start()
     {

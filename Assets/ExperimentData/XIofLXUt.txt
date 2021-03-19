@@ -1,0 +1,40 @@
+Date: 2021-03-19 6:05:27 PM
+Name: 
+Age: 
+Gender: 
+
+
+Task1
+
+Device:                           NextMind
+Number of Selections:             5
+
+Accuracy:
+Right Selections:                 5
+Wrong Selections:                 0
+Signal is present? (Yellow Box)   1    0    1    1    1
+Right or Wrong:                   1    1    1    1    1
+Signal Detection Theory Case:     11    22    11    11    11
+
+Time:
+Total Time in the Scene:          75.70931
+Time per Selection:               6.9    28.76    21.23    9.25    9.57
+
+
+Task4
+
+Device:                           NextMind
+Number of Selections:             5
+
+Accuracy:
+Right Selections:                 1
+Wrong Selections:                 4
+Signal is present? (Yellow Box)   0    1    1    1    0
+Right or Wrong:                   0    0    1    0    0
+Signal Detection Theory Case:     12    21    11    21    12
+
+Time:
+Total Time in the Scene:          159.2275
+Time per Selection:               -0.4    51.85    17.34    29.61    60.83
+
+
