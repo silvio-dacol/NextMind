@@ -544,7 +544,7 @@ PlayerSettings:
   metroCertificateNotAfter: 80cf0f9f7539d801
   metroApplicationDescription: NextMind
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: NextMind
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
@@ -577,7 +577,7 @@ PlayerSettings:
       LowLevelDevices: False
       Microphone: True
       MusicLibrary: True
-      Objects3D: False
+      Objects3D: True
       OfflineMapsManagement: False
       PhoneCall: False
       PhoneCallHistoryPublic: False
@@ -599,7 +599,7 @@ PlayerSettings:
       WebCam: True
   metroTargetDeviceFamilies:
     Desktop: False
-    Holographic: False
+    Holographic: True
     IoT: False
     IoTHeadless: False
     Mobile: False
