@@ -10,8 +10,8 @@ public class LimitTimeSelection : MonoBehaviour
     //Define the usefulVariables class
     private UsefulVariables usefulVariables;
 
-    //Time limit of 120 seconds
-    private float timeLimit = 120f;
+    //Time limit of 60 seconds (gives pressure to the user)
+    public float timeLimit = 60f;
 
     void Start()
     {

@@ -35,7 +35,7 @@ public class MoveObject : MonoBehaviour
             range = 0.5f;
 
             //I define the deltaFrames to change direction just between 700 and 900
-            deltaFrames = Random.Range(400, 600);
+            deltaFrames = Random.Range(300, 500);
         }
 
         else if (gameObject.scene.name == "Task4")
@@ -44,7 +44,7 @@ public class MoveObject : MonoBehaviour
             range = 0.5f;
 
             //I define the deltaFrames to change direction just between 700 and 900
-            deltaFrames = Random.Range(200, 300);
+            deltaFrames = Random.Range(150, 250);
         }
 
         if (gameObject.name == "NoBoxObject")

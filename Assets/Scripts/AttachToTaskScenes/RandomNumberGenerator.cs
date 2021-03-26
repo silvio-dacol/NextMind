@@ -19,7 +19,7 @@ public class RandomNumberGenerator : MonoBehaviour
 
         for (int i = 0; i < objectContainer.childCount; i++)
         {
-            //At the start I deactivate all the RandomIdentifiers over the object
+            //At the start I deactivate all the yellow boxes over the object
             objectContainer.GetChild(i).transform.Find("RandomIdentifier").gameObject.SetActive(false);
 
             //At the start I activate the Interactable components of all the objects
