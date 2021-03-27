@@ -66,7 +66,8 @@ public class MoveObject : MonoBehaviour
 
     private void Update()
     {
-        if(changeDirectionIndex == 0)
+        //Move just if I have clicked the button
+        if (changeDirectionIndex == 0)
         {
             gameObject.transform.position = gameObject.transform.position + (normalisedPositionVector * speed * Time.deltaTime);
 

@@ -6,23 +6,40 @@ using System.IO;
 
 public class CreateParticipantFile : MonoBehaviour
 {
+    [Tooltip("Check this if you're testing the application in simulation mode on PC\n" +
+        "Uncheck if you're testing on HoloLens")]
+    public bool isItSimulationMode = true;
+
     //Method to Create the file I need at the OnClick() event of the StartExperiment button
     public void CreateFile()
     {
-        //Specify a name for your folder.
-        string pathString = Application.dataPath + "/ExperimentData";
-
-        //If the directory still not exist, create it
-        if(!File.Exists(pathString))
-        {
-            System.IO.Directory.CreateDirectory(pathString);
-        }
+        string pathString = "";
 
         //Create a random file.txt name for the file you want to create.
         string fileName = randomFileName();
 
-        //Use Combine to add the file name to the path.
-        pathString = System.IO.Path.Combine(pathString, fileName);
+        //When I want to run the application on the pc simulation
+        if (isItSimulationMode == true)
+        {
+            //Specify a name for your folder.
+            pathString = Application.dataPath + "/ExperimentData";
+
+            //If the directory still not exist, create it
+            if(!File.Exists(pathString))
+            {
+                System.IO.Directory.CreateDirectory(pathString);
+            }
+
+            //Use Combine to add the file name to the path.
+            pathString = Path.Combine(pathString, fileName);
+        }
+
+        //When I want to run the Application on the HoloLens
+        else if (isItSimulationMode == false)
+        {
+            //Use Combine to add the file name to the path.
+            pathString = Path.Combine(Application.persistentDataPath, fileName);
+        }
 
         //Store the file name (string) in the UsefulVariable script container
         UsefulVariables usefulVariables = FindObjectOfType<UsefulVariables>();

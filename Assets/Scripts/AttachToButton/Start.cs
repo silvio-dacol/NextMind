@@ -6,22 +6,20 @@ using UnityEngine;
 
 public class Start : MonoBehaviour
 {
-    private float secondsToWait = 4.0f;
-
     //This method creates a Random Number which will be assigned to the first element in the scene
     public void SwitchOnSelectionElements()
     {
-        StartCoroutine(Wait(secondsToWait));
+        StartCoroutine(Wait(4.0f));
 
         StartCoroutine(AllObjectBlinking(0.5f));
     }
 
     IEnumerator Wait(float waitTime)
-    {
-        yield return new WaitForSeconds(waitTime);
-
+    {        
         //I get the ObjectContainer game object so that I'm able to count how many child it has
         Transform objectContainer = GameObject.Find("ObjectContainer").transform;
+
+        yield return new WaitForSeconds(waitTime);
 
         //I get the UsefulVariables script (it contains all the variable needed to be stored)
         UsefulVariables usefulVariables = FindObjectOfType<UsefulVariables>();
@@ -46,28 +44,52 @@ public class Start : MonoBehaviour
         //I get the objectContainer Game Object with all the selectables inside
         Transform objectContainer = GameObject.Find("ObjectContainer").transform;
 
-        objectContainer.transform.localScale = new Vector3(0, 0, 0);
+        for (int i = 0; i < objectContainer.childCount - 1; i++)
+        {
+            objectContainer.GetChild(i).transform.localScale = new Vector3(0, 0, 0);
+        }
         yield return new WaitForSeconds(blinkTime);
 
-        objectContainer.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+        for (int i = 0; i < objectContainer.childCount - 1; i++)
+        {
+            objectContainer.GetChild(i).transform.localScale = new Vector3(1, 1, 1);
+        }
         yield return new WaitForSeconds(blinkTime);
 
-        objectContainer.transform.localScale = new Vector3(0, 0, 0);
+        for (int i = 0; i < objectContainer.childCount - 1; i++)
+        {
+            objectContainer.GetChild(i).transform.localScale = new Vector3(0, 0, 0);
+        }
         yield return new WaitForSeconds(blinkTime);
 
-        objectContainer.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+        for (int i = 0; i < objectContainer.childCount - 1; i++)
+        {
+            objectContainer.GetChild(i).transform.localScale = new Vector3(1, 1, 1);
+        }
         yield return new WaitForSeconds(blinkTime);
 
-        objectContainer.transform.localScale = new Vector3(0, 0, 0);
+        for (int i = 0; i < objectContainer.childCount - 1; i++)
+        {
+            objectContainer.GetChild(i).transform.localScale = new Vector3(0, 0, 0);
+        }
         yield return new WaitForSeconds(blinkTime);
 
-        objectContainer.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+        for (int i = 0; i < objectContainer.childCount - 1; i++)
+        {
+            objectContainer.GetChild(i).transform.localScale = new Vector3(1, 1, 1);
+        }
         yield return new WaitForSeconds(blinkTime);
 
-        objectContainer.transform.localScale = new Vector3(0, 0, 0);
+        for (int i = 0; i < objectContainer.childCount - 1; i++)
+        {
+            objectContainer.GetChild(i).transform.localScale = new Vector3(0, 0, 0);
+        }
         yield return new WaitForSeconds(blinkTime);
 
-        objectContainer.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+        for (int i = 0; i < objectContainer.childCount - 1; i++)
+        {
+            objectContainer.GetChild(i).transform.localScale = new Vector3(1, 1, 1);
+        }
         yield return new WaitForSeconds(blinkTime);
     }
 }
