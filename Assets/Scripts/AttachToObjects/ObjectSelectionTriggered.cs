@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 //Script to be attached to the different objects in the scene
 
@@ -38,8 +40,8 @@ public class ObjectSelectionTriggered : MonoBehaviour
 
             //I compute the distance between the selected object and the one that must be selected so I can compare if the selected object is in the range
             float distanceBetweenObjects = Vector3.Distance(gameObject.transform.position, objectContainer.GetChild(randomNumber).transform.position);
-            //TOGLILOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO DOPPPPPPPOOOOOOOOOOOOOO
-            Debug.Log("The distance between objects is: " + distanceBetweenObjects);
+
+
 
             //If the selected object is the right one, increase the rightObjectSelection
             if(objectIndex == randomNumber)
@@ -107,8 +109,8 @@ public class ObjectSelectionTriggered : MonoBehaviour
 
             //I compute the distance between the selected object and the one that must be selected so I can compare if the selected object is in the range
             float distanceBetweenObjects = Vector3.Distance(gameObject.transform.position, objectContainer.GetChild(randomNumber).transform.position);
-            //TOGLILOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO DOPPPPPPPOOOOOOOOOOOOOO
-            Debug.Log("The distance between objects is: " + distanceBetweenObjects);
+
+
 
             //If the selected object is the right one, increase the rightObjectSelection
             if (objectIndex == randomNumber)
@@ -160,6 +162,11 @@ public class ObjectSelectionTriggered : MonoBehaviour
 
 
 
+            //I make the object blinking when selected so the user can understand when he has selected something
+            StartCoroutine(Blinker(0.3f));
+
+
+
             //I increase the counter of the number of times an object is selected
             usefulVariables.selectionCount = usefulVariables.selectionCount + 1;
 
@@ -183,5 +190,29 @@ public class ObjectSelectionTriggered : MonoBehaviour
                 }
             }
         }
+    }
+
+
+
+    //This IEnumerator makes the object blinking when selected
+    IEnumerator Blinker(float blinkTime)
+    {
+        gameObject.transform.localScale = new Vector3(0, 0, 0);
+        yield return new WaitForSeconds(blinkTime);
+
+        gameObject.transform.localScale = new Vector3(1, 1, 1);
+        yield return new WaitForSeconds(blinkTime);
+
+        gameObject.transform.localScale = new Vector3(0, 0, 0);
+        yield return new WaitForSeconds(blinkTime);
+
+        gameObject.transform.localScale = new Vector3(1, 1, 1);
+        yield return new WaitForSeconds(blinkTime);
+
+        gameObject.transform.localScale = new Vector3(0, 0, 0);
+        yield return new WaitForSeconds(blinkTime);
+
+        gameObject.transform.localScale = new Vector3(1, 1, 1);
+        yield return new WaitForSeconds(blinkTime);
     }
 }

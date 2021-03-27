@@ -12,6 +12,8 @@ public class Start : MonoBehaviour
     public void SwitchOnSelectionElements()
     {
         StartCoroutine(Wait(secondsToWait));
+
+        StartCoroutine(AllObjectBlinking(0.5f));
     }
 
     IEnumerator Wait(float waitTime)
@@ -37,5 +39,35 @@ public class Start : MonoBehaviour
             //Activate the one I need respect to the new random object so that the user can understand which one he could select
             objectContainer.GetChild(usefulVariables.randomNumber).transform.Find("RandomIdentifier").gameObject.SetActive(true);
         }
+    }
+
+    IEnumerator AllObjectBlinking(float blinkTime)
+    {
+        //I get the objectContainer Game Object with all the selectables inside
+        Transform objectContainer = GameObject.Find("ObjectContainer").transform;
+
+        objectContainer.transform.localScale = new Vector3(0, 0, 0);
+        yield return new WaitForSeconds(blinkTime);
+
+        objectContainer.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+        yield return new WaitForSeconds(blinkTime);
+
+        objectContainer.transform.localScale = new Vector3(0, 0, 0);
+        yield return new WaitForSeconds(blinkTime);
+
+        objectContainer.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+        yield return new WaitForSeconds(blinkTime);
+
+        objectContainer.transform.localScale = new Vector3(0, 0, 0);
+        yield return new WaitForSeconds(blinkTime);
+
+        objectContainer.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+        yield return new WaitForSeconds(blinkTime);
+
+        objectContainer.transform.localScale = new Vector3(0, 0, 0);
+        yield return new WaitForSeconds(blinkTime);
+
+        objectContainer.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+        yield return new WaitForSeconds(blinkTime);
     }
 }
