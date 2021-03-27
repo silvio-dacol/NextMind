@@ -20,7 +20,8 @@ public class ObjectSelectionTriggered : MonoBehaviour
         //I save the index of the clicked object right now 
         objectIndex = gameObject.transform.GetSiblingIndex();
 
-
+        //I use a variable to exit to pass to the next selection task
+        int exit = 0;
 
 
 
@@ -33,6 +34,13 @@ public class ObjectSelectionTriggered : MonoBehaviour
             //I store in the variable RandomNumber the new value
             int randomNumber = usefulVariables.randomNumber;
 
+
+
+            //I compute the distance between the selected object and the one that must be selected so I can compare if the selected object is in the range
+            float distanceBetweenObjects = Vector3.Distance(gameObject.transform.position, objectContainer.GetChild(randomNumber).transform.position);
+            //TOGLILOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO DOPPPPPPPOOOOOOOOOOOOOO
+            Debug.Log("The distance between objects is: " + distanceBetweenObjects);
+
             //If the selected object is the right one, increase the rightObjectSelection
             if(objectIndex == randomNumber)
             {
@@ -44,10 +52,13 @@ public class ObjectSelectionTriggered : MonoBehaviour
 
                 //I fill the corresponding array part with a 1 (right selection)
                 usefulVariables.accuracyOfSingleSelection[usefulVariables.selectionCount] = 1;
+
+                //I exit from the current selection task
+                exit = 1;
             }
 
-            //If the selected object is the wrong one, increase the wrongObjectSelection
-            else if(objectIndex != randomNumber)
+            //If the selected object is the wrong one and it is within the 2 meters sphere, increase the wrongObjectSelection
+            else if(objectIndex != randomNumber && distanceBetweenObjects < 2)
             {
                 //I'm in case 21 of the Signal Detection Theory Matrix
                 usefulVariables.matrixCase[usefulVariables.selectionCount] = 21;
@@ -55,20 +66,27 @@ public class ObjectSelectionTriggered : MonoBehaviour
                 usefulVariables.wrongObjectSelection = usefulVariables.wrongObjectSelection + 1;
 
                 usefulVariables.accuracyOfSingleSelection[usefulVariables.selectionCount] = 0;
+
+                //I exit from the current selection task
+                exit = 1;
             }
+            
+            
 
 
 
             //When the comparison finished, I call again the RandomNumberGenerator to obtain a new randomNumber
-
-            RandomNumberGenerator randomNumberGenerator = FindObjectOfType<RandomNumberGenerator>();
-
-            randomNumberGenerator.RandomNumber();
-
-            //If the random number is equal to the previous one, do it again until is different
-            while(randomNumber == usefulVariables.randomNumber)
+            if(exit == 1)
             {
+                RandomNumberGenerator randomNumberGenerator = FindObjectOfType<RandomNumberGenerator>();
+
                 randomNumberGenerator.RandomNumber();
+
+                //If the random number is equal to the previous one, do it again until is different
+                while(randomNumber == usefulVariables.randomNumber)
+                {
+                    randomNumberGenerator.RandomNumber();
+                }
             }
         }
 
@@ -82,8 +100,15 @@ public class ObjectSelectionTriggered : MonoBehaviour
         {
             //I measure the accuracy of selection by comparing if the selected object child number correspond with the randomNumber
 
-            //I store in the variable RandomNumber the new value
+            //I store in the variable RandomNumber the new value correspondent to the NoBoxObject (Red Cube)
             int randomNumber = objectContainer.childCount - 1;
+
+
+
+            //I compute the distance between the selected object and the one that must be selected so I can compare if the selected object is in the range
+            float distanceBetweenObjects = Vector3.Distance(gameObject.transform.position, objectContainer.GetChild(randomNumber).transform.position);
+            //TOGLILOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO DOPPPPPPPOOOOOOOOOOOOOO
+            Debug.Log("The distance between objects is: " + distanceBetweenObjects);
 
             //If the selected object is the right one, increase the rightObjectSelection
             if (objectIndex == randomNumber)
@@ -96,10 +121,13 @@ public class ObjectSelectionTriggered : MonoBehaviour
 
                 //I fill the corresponding array part with a 1 (right selection)
                 usefulVariables.accuracyOfSingleSelection[usefulVariables.selectionCount] = 1;
+
+                //I exit from the current selection task
+                exit = 1;
             }
 
             //If the selected object is the wrong one, increase the wrongObjectSelection
-            else if (objectIndex != randomNumber)
+            else if (objectIndex != randomNumber && distanceBetweenObjects < 2)
             {
                 //I'm in case 12 of the Signal Detection Theory Matrix
                 usefulVariables.matrixCase[usefulVariables.selectionCount] = 12;
@@ -107,49 +135,52 @@ public class ObjectSelectionTriggered : MonoBehaviour
                 usefulVariables.wrongObjectSelection = usefulVariables.wrongObjectSelection + 1;
 
                 usefulVariables.accuracyOfSingleSelection[usefulVariables.selectionCount] = 0;
-            }
 
-
-
-            //Deactivate all the identifiers
-            for (int i = 0; i < objectContainer.childCount; i++)
-            {
-                objectContainer.GetChild(i).transform.Find("RandomIdentifier").gameObject.SetActive(false);
+                //I exit from the current selection task
+                exit = 1;
             }
         }
 
 
-
-
-
-
-        //I get the SelectionSound script
-        SelectionSound selectionSound = FindObjectOfType<SelectionSound>();
-        //I play the sound everytime I select an object
-        selectionSound.Play();
-
-
-
-        //I increase the counter of the number of times an object is selected
-        usefulVariables.selectionCount = usefulVariables.selectionCount + 1;
-
-
-
-        //Check this just for the first selection (if I don't add this, it gives an Exception)
-        if(usefulVariables.selectionCount < usefulVariables.numberOfSelections)
+        //I enter here just if the exit variable is 1
+        if (exit == 1)
         {
-            //Now I activate the randomIdentifier of the new object and deactivate all the others
             //Deactivate all the identifiers
             for (int i = 0; i < objectContainer.childCount; i++)
             {
                 objectContainer.GetChild(i).transform.Find("RandomIdentifier").gameObject.SetActive(false);
             }
 
-            //If the usefulVariables.boxOrNoBox == 1 activate the box over the element (Just in that case)
-            if (usefulVariables.boxOrNoBox[usefulVariables.selectionCount] == 1)
+
+
+            //I get the SelectionSound script
+            SelectionSound selectionSound = FindObjectOfType<SelectionSound>();
+            //I play the sound everytime I select an object
+            selectionSound.Play();
+
+
+
+            //I increase the counter of the number of times an object is selected
+            usefulVariables.selectionCount = usefulVariables.selectionCount + 1;
+
+
+
+            //Check this just for the first selection (if I don't add this, it gives an Exception)
+            if (usefulVariables.selectionCount < usefulVariables.numberOfSelections)
             {
-                //Activate the one I need respect to the new random object so that the user can understand which one he could select
-                objectContainer.GetChild(usefulVariables.randomNumber).transform.Find("RandomIdentifier").gameObject.SetActive(true);
+                //Now I activate the randomIdentifier of the new object and deactivate all the others
+                //Deactivate all the identifiers
+                for (int i = 0; i < objectContainer.childCount; i++)
+                {
+                    objectContainer.GetChild(i).transform.Find("RandomIdentifier").gameObject.SetActive(false);
+                }
+
+                //If the usefulVariables.boxOrNoBox == 1 activate the box over the element (Just in that case)
+                if (usefulVariables.boxOrNoBox[usefulVariables.selectionCount] == 1)
+                {
+                    //Activate the one I need respect to the new random object so that the user can understand which one he could select
+                    objectContainer.GetChild(usefulVariables.randomNumber).transform.Find("RandomIdentifier").gameObject.SetActive(true);
+                }
             }
         }
     }
