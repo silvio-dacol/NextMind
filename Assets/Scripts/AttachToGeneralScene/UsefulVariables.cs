@@ -6,7 +6,7 @@ public class UsefulVariables : MonoBehaviour
 {
     //SelectionCount
     [Tooltip("How many objects do you want the user to select in the scene?")]
-    public int numberOfSelections = 10;
+    public int numberOfSelections = 15;
     [Tooltip("How many objects has already been hit for that specific experiment")]
     public int selectionCount;
 
