@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Attach this script to the yellow box in each object
+
 public class TurnAndColourChange : MonoBehaviour
 {
     private int rotationSpeed = 35;

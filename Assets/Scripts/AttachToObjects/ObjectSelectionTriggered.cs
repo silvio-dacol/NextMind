@@ -60,7 +60,7 @@ public class ObjectSelectionTriggered : MonoBehaviour
             }
 
             //If the selected object is the wrong one and it is within the 2 meters sphere, increase the wrongObjectSelection
-            else if(objectIndex != randomNumber && distanceBetweenObjects < 2)
+            else if(objectIndex != randomNumber && distanceBetweenObjects < 2 || objectIndex == objectContainer.childCount - 1)
             {
                 //I'm in case 21 of the Signal Detection Theory Matrix
                 usefulVariables.matrixCase[usefulVariables.selectionCount] = 21;
@@ -84,10 +84,14 @@ public class ObjectSelectionTriggered : MonoBehaviour
 
                 randomNumberGenerator.RandomNumber();
 
-                //If the random number is equal to the previous one, do it again until is different
-                while(randomNumber == usefulVariables.randomNumber)
+                float distanceBetweenConsecutiveObjects = Vector3.Distance(gameObject.transform.position, objectContainer.GetChild(usefulVariables.randomNumber).transform.position);
+
+                //If the random number object is within 2 metres from the previous, do it again
+                while (distanceBetweenConsecutiveObjects < 2)
                 {
                     randomNumberGenerator.RandomNumber();
+
+                    distanceBetweenConsecutiveObjects = Vector3.Distance(gameObject.transform.position, objectContainer.GetChild(usefulVariables.randomNumber).transform.position);
                 }
             }
         }
@@ -197,22 +201,25 @@ public class ObjectSelectionTriggered : MonoBehaviour
     //This IEnumerator makes the object blinking when selected
     IEnumerator Blinker(float blinkTime)
     {
-        gameObject.transform.localScale = new Vector3(0, 0, 0);
-        yield return new WaitForSeconds(blinkTime);
-
-        gameObject.transform.localScale = new Vector3(1, 1, 1);
-        yield return new WaitForSeconds(blinkTime);
+        //I get the reduceObjectDimension localScale variable
+        float localScale = GameObject.Find("ReduceObjectDimension").GetComponent<ReduceObjectDimension>().localScale;
 
         gameObject.transform.localScale = new Vector3(0, 0, 0);
         yield return new WaitForSeconds(blinkTime);
 
-        gameObject.transform.localScale = new Vector3(1, 1, 1);
+        gameObject.transform.localScale = new Vector3(localScale, localScale, localScale);
         yield return new WaitForSeconds(blinkTime);
 
         gameObject.transform.localScale = new Vector3(0, 0, 0);
         yield return new WaitForSeconds(blinkTime);
 
-        gameObject.transform.localScale = new Vector3(1, 1, 1);
+        gameObject.transform.localScale = new Vector3(localScale, localScale, localScale);
+        yield return new WaitForSeconds(blinkTime);
+
+        gameObject.transform.localScale = new Vector3(0, 0, 0);
+        yield return new WaitForSeconds(blinkTime);
+
+        gameObject.transform.localScale = new Vector3(localScale, localScale, localScale);
         yield return new WaitForSeconds(blinkTime);
     }
 }
