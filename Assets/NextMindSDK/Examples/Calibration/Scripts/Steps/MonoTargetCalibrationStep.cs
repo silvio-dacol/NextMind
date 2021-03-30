@@ -22,17 +22,21 @@ namespace NextMind.Examples.Calibration
         [SerializeField]
         private CalibrationManager calibrationManager = null;
 
+        [Header("Particles")]
+
         /// <summary>
         /// The particle system in background, giving hints about user's progress.
         /// </summary>
         [SerializeField]
         private ParticleSystem particles = null;
-        
+
         /// <summary>
         /// An animationCurve used to define the way the particle system evolve to the final step.
         /// </summary>
         [SerializeField]
         private AnimationCurve progressCurve = null;
+
+        [Header("NeuroTag group")]
 
         /// <summary>
         /// The circle growing step by step around the NeuroTag.
@@ -50,26 +54,42 @@ namespace NextMind.Examples.Calibration
         /// Parent transform of object displayed before calibration
         /// </summary>
         [SerializeField]
-        private RectTransform preCalibrationGroup = null;
+        private CanvasFader preCalibrationGroup = null;
+
+        [Header("Error handling")]
+
+        [SerializeField]
+        private GameObject errorPanel = null;
+        [SerializeField]
+        private Text errorDescription;
 
         /// <summary>
         /// The total number of calibration trials.
         /// </summary>
         private int numberOfTrials;
-        
+
         private int currentStep = 0;
+
+        private float originalSimulationSpeed;
+
+        #region Unity methods
 
         private void Awake()
         {
-            int numberOfTrials = calibrationManager.NumberOfTrials;
+            numberOfTrials = calibrationManager.NumberOfTrials;
 
             // Instantiate the right number of points on the circle.
             Transform pointPrefab = progressionCircleHint.transform.GetChild(0);
-            for(int i=1;i<numberOfTrials;++i)
+            for (int i = 1; i < numberOfTrials; ++i)
             {
-                Instantiate(pointPrefab.gameObject,progressionCircleHint.transform);
+                Instantiate(pointPrefab.gameObject, progressionCircleHint.transform);
             }
+
+            // Store the original particles simulation speed.
+            originalSimulationSpeed = particles.main.simulationSpeed;
         }
+
+        #endregion
 
         #region AbstractStep implementation
 
@@ -80,14 +100,18 @@ namespace NextMind.Examples.Calibration
             behaviour.InitFromStep(this);
             calibrationManager.SetNeuroTagBehaviour(behaviour);
 
-            numberOfTrials = calibrationManager.NumberOfTrials;
+            // Ensure displaying the preClibrationGroup at calibration start.
+            preCalibrationGroup.StartFade(true, true);
 
-            // Reset the particle system.
+            // Reset the particle system progress & speed.
             UpdateParticleSystem(0);
+            var main = particles.main;
+            main.simulationSpeed = originalSimulationSpeed;
 
             calibrationManager.StartCalibration();
 
             calibrationManager.onCalibrationOver.AddListener(OnCalibrationOver);
+            calibrationManager.onCalibrationError.AddListener(OnCalibrationError);
         }
 
         public override void OnExitStep()
@@ -95,23 +119,27 @@ namespace NextMind.Examples.Calibration
             currentStep = 0;
             progressionCircleHint.fillAmount = 0;
 
-            // Hide points on circle
+            // Hide points on circle.
             foreach (Transform t in progressionCircleHint.transform)
             {
                 t.gameObject.SetActive(false);
             }
 
+            // Hide the error panel which have been displayed.
+            errorPanel.SetActive(false);
+
             calibrationManager.onCalibrationOver.RemoveListener(OnCalibrationOver);
+            calibrationManager.onCalibrationError.RemoveListener(OnCalibrationError);
         }
 
         /// <inheritdoc />
-        protected internal override bool GoToNextStepAllowed()
+        public override bool GoToNextStepAllowed()
         {
             return false;
         }
 
         /// <inheritdoc />
-        protected internal override bool GoToPreviousStepAllowed()
+        public override bool GoToPreviousStepAllowed()
         {
             return false;
         }
@@ -125,7 +153,7 @@ namespace NextMind.Examples.Calibration
             // If it is the first step, show the Neurotag first
             if (currentStep == 0)
             {
-                yield return StartCoroutine(preCalibrationGroup.GetComponent<CanvasFader>().Fade(0));
+                yield return StartCoroutine(preCalibrationGroup.Fade(0));
                 yield return StartCoroutine(ShowTransform(neuroTagGroup, true));
             }
         }
@@ -158,7 +186,7 @@ namespace NextMind.Examples.Calibration
                 // Accelerate the simulation
                 StartCoroutine(SmoothSetSimulationSpeed(1f, 0.25f));
                 // Hide the Neurotag
-                yield return StartCoroutine(ShowTransform(neuroTagGroup,false));
+                yield return StartCoroutine(ShowTransform(neuroTagGroup, false));
             }
             else
             {
@@ -173,7 +201,21 @@ namespace NextMind.Examples.Calibration
 
         private void OnCalibrationOver()
         {
-            StartCoroutine(WaitAndNextStep(3f));
+            stepsManager.OnClickOnNextStep(true);
+        }
+
+        private void OnCalibrationError(string errorMessage)
+        {
+            StartCoroutine(CalibrationErrorCoroutine(errorMessage));
+        }
+
+        private IEnumerator CalibrationErrorCoroutine(string errorMessage)
+        {
+            // Hide the Neurotag
+            yield return StartCoroutine(ShowTransform(neuroTagGroup, false));
+
+            errorDescription.text = errorMessage;
+            errorPanel.SetActive(true);
         }
 
         #endregion
@@ -330,17 +372,5 @@ namespace NextMind.Examples.Calibration
 
             transform.localScale = targetScale;
         }
-
-        /// <summary>
-        /// Convenient function waiting during <paramref name="timeToWait"/> before starting the next step.
-        /// </summary>
-        /// <returns></returns>
-        private IEnumerator WaitAndNextStep(float timeToWait)
-        {
-            yield return new WaitForSeconds(timeToWait);
-
-            stepsManager.OnClickOnNextStep(true);
-        }
     }
 }
-

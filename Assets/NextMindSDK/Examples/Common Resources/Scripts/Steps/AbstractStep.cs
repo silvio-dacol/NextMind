@@ -31,12 +31,12 @@ namespace NextMind.Examples.Steps
         /// Function telling the StepsManager if going to the next step from this one is allowed.
         /// </summary>
         /// <returns>True by default.</returns>
-        internal protected virtual bool GoToNextStepAllowed() { return true; }
+        public virtual bool GoToNextStepAllowed() { return true; }
 
         /// <summary>
         /// Function telling the StepsManager if going back to the previous step from this one is allowed.
         /// </summary>
         /// <returns>True by default.</returns>
-        internal protected virtual bool GoToPreviousStepAllowed() { return true; }
+        public virtual bool GoToPreviousStepAllowed() { return true; }
     }
 }

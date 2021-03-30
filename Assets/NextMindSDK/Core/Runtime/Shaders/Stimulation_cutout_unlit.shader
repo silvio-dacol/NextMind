@@ -9,6 +9,7 @@
         _Density("Density", Float) = 1
         _AlphaCutoff("Cutoff", Float) = 0.5
         _ScreenRatio("Screen Ratio", Float) = 1.777
+        [Toggle] _OverlayBlending("Overlay blending", Float) = 0
     }
 
     SubShader
@@ -27,12 +28,14 @@
         {
             float4 tex;
 
+            float4 baseTex = tex2D(_MainTex, IN.uv_MainTex) * _Color;
+
 #if SCREEN_COORDINATES
-            tex = ScreenCoordinatesProjection(IN);
+            tex = ScreenCoordinatesProjection(IN, baseTex);
 #elif TRIPLANAR
-            tex = TriplanarProjection(IN);
+            tex = TriplanarProjection(IN, baseTex);
 #elif STANDARD
-            tex = StandardProjection(IN);
+            tex = StandardProjection(IN, baseTex);
 #endif
 
             o.Emission = tex.xyz;

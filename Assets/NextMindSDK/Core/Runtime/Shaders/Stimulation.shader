@@ -8,6 +8,7 @@
         _Blend("Blend",Range(0,1)) = 1
         _Density("Density", Float) = 1
         _ScreenRatio("Screen Ratio", Float) = 1.777
+        [Toggle] _OverlayBlending("Overlay blending", Float) = 0
     }
 
     SubShader
@@ -29,13 +30,16 @@
         {
             float4 tex;
 
+            float4 baseTex = tex2D(_MainTex, IN.uv_MainTex) * _Color;
+
 #if SCREEN_COORDINATES
-            tex = ScreenCoordinatesProjection(IN);
+            tex = ScreenCoordinatesProjection(IN, baseTex);
 #elif TRIPLANAR
-            tex = TriplanarProjection(IN);
+            tex = TriplanarProjection(IN, baseTex);
 #elif STANDARD
-            tex = StandardProjection(IN);
+            tex = StandardProjection(IN, baseTex);
 #endif
+
             o.Albedo = tex.xyz;
         }
 

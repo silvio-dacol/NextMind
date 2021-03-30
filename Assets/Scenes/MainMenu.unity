@@ -188,5 +188,65 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5358715596190685757, guid: 9100cfa4ee983d84d90659973c940706,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5358715596264340828, guid: 9100cfa4ee983d84d90659973c940706,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5358715596264340828, guid: 9100cfa4ee983d84d90659973c940706,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5358715596264340828, guid: 9100cfa4ee983d84d90659973c940706,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5358715596264340828, guid: 9100cfa4ee983d84d90659973c940706,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5358715596264340828, guid: 9100cfa4ee983d84d90659973c940706,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5358715596264340828, guid: 9100cfa4ee983d84d90659973c940706,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5474626002733226643, guid: 9100cfa4ee983d84d90659973c940706,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0575
+      objectReference: {fileID: 0}
+    - target: {fileID: 6477636214089309232, guid: 9100cfa4ee983d84d90659973c940706,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6477636214602888380, guid: 9100cfa4ee983d84d90659973c940706,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6477636214602888380, guid: 9100cfa4ee983d84d90659973c940706,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6477636214602888380, guid: 9100cfa4ee983d84d90659973c940706,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9100cfa4ee983d84d90659973c940706, type: 3}

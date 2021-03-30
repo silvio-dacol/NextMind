@@ -41,7 +41,8 @@ namespace NextMind.Examples.Calibration
 
         public override void OnEnterStep()
         {
-            base.OnEnterStep();
+            // Store the original description text.
+            originalDescription = description.text;
 
             // If results are already available when entering the step, display them, else listen to the onCalibrationResultsAvailable event.
             if (calibrationManager.CalibrationResultsAvailable)
@@ -62,8 +63,6 @@ namespace NextMind.Examples.Calibration
 
         public override void OnExitStep()
         {
-            base.OnExitStep();
-
             // Reset elements.
             description.text = originalDescription;
             nextButton.interactable = false;
@@ -111,13 +110,13 @@ namespace NextMind.Examples.Calibration
         }
 
         /// <inheritdoc />
-        protected internal override bool GoToNextStepAllowed()
+        public override bool GoToNextStepAllowed()
         {
             return false;
         }
 
         /// <inheritdoc />
-        protected internal override bool GoToPreviousStepAllowed()
+        public override bool GoToPreviousStepAllowed()
         {
             return false;
         }

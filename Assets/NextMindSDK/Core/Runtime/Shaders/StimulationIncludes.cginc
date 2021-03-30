@@ -15,7 +15,7 @@ sampler2D _MainTex;
 // Color applied on main texture.
 fixed4 _Color;
 
-// Stimulation texture 
+// Stimulation texture.
 sampler2D _Stimulation;
 
 // Blend factor between main and stimulation textures. This variable is automatically set during runtime by the NeuroManager.
@@ -24,8 +24,27 @@ fixed _Blend;
 // Use as the stimulation texture scale in a triplanar context. Initialliy called density because it is a simple way to deal with "beans" density.
 half _Density;
 
-// TODO: should be set at application runtim from used screen dimension
+// TODO: should be set at application runtime from used screen dimension.
 half _ScreenRatio;
+
+bool _OverlayBlending;
+
+fixed4 Overlay(fixed4 a, fixed4 b)
+{
+    fixed4 r = a < .5 ? 2.0 * a * b : 1.0 - 2.0 * (1.0 - a) * (1.0 - b);
+    r.a = b.a;
+
+    return lerp(b,r,a.a);
+}
+
+void Unity_Blend_Overlay_float4(float4 Base, float4 Blend, float Opacity, out float4 Out)
+{
+    float4 result1 = 1.0 - 2.0 * (1.0 - Base) * (1.0 - Blend);
+    float4 result2 = 2.0 * Base * Blend;
+    float4 zeroOrOne = step(Base, 0.5);
+    Out = result2 * zeroOrOne + (1 - zeroOrOne) * result1;
+    Out = lerp(Base, Out, Opacity);
+}
 
 float4 GetProjectedTexture(sampler2D tex, half3 weights, float3 uv)
 {
@@ -48,13 +67,21 @@ float4 GetProjectedTexture(sampler2D tex, half3 weights, float3 uv)
 
 float4 BlendStimulationTexture(float4 mainTex, float4 beansTex)
 {
-    // Prepare the returned texture.
-    float4 retTex = 0;
+    float4 textureToBlend = 0;
+    if (_OverlayBlending)
+    {
+        // Apply overlay 
+        Unity_Blend_Overlay_float4(beansTex, mainTex, 1, textureToBlend);
+    }
+    else
+    {
+        textureToBlend = beansTex;
+    }
 
     // The full blended texture will use the main texture if the StimulationTexture is transparent.
-    float4 fullBlendedTexture = lerp(mainTex, beansTex, beansTex.a);
+    float4 fullBlendedTexture = lerp(mainTex, textureToBlend, beansTex.a);
 
-    retTex.xyz = lerp(mainTex, fullBlendedTexture, _Blend);
+    float4 retTex = lerp(mainTex, fullBlendedTexture, _Blend);
 
 #if MAIN_ALPHA
     retTex.w = mainTex.a;
@@ -62,13 +89,11 @@ float4 BlendStimulationTexture(float4 mainTex, float4 beansTex)
     retTex.w = lerp(mainTex.a, beansTex.a, _Blend);
 #endif
 
-    return retTex;
+    return retTex; 
 }
 
-float4 ScreenCoordinatesProjection(Input IN)
+float4 ScreenCoordinatesProjection(Input IN, float4 mainTex)
 {
-    float4 mainTex = tex2D(_MainTex, IN.uv_MainTex) * _Color;
-
     float2 screenUV = IN.screenPos.xy / IN.screenPos.w;
     
     half referenceRatio = _ScreenRatio / 1.333f;
@@ -79,20 +104,7 @@ float4 ScreenCoordinatesProjection(Input IN)
 
     float4 beansTex = tex2D(_Stimulation, screenUV);
 
-    // Prepare the returned texture.
-    float4 retTex = 0;
-
-    // The full blended texture will use the main texture if the StimulationTexture is transparent.
-    float4 fullBlendedTexture = lerp(mainTex, beansTex, beansTex.a);
-    retTex.xyz = lerp(mainTex, fullBlendedTexture, _Blend);
-
-#if MAIN_ALPHA
-    retTex.w = mainTex.a;
-#else
-    retTex.w = lerp(mainTex.a, beansTex.a, _Blend);
-#endif
-
-    return retTex;
+    return BlendStimulationTexture(mainTex, beansTex);
 }
 
 // Returns distance between the camera and the center of the object.
@@ -102,10 +114,8 @@ float CameraDistance()
     return length(objectOrigin - _WorldSpaceCameraPos.xyz);
 }
 
-float4 StandardProjection(Input IN)
+float4 StandardProjection(Input IN, float4 mainTex)
 {
-    float4 mainTex = tex2D(_MainTex, IN.uv_MainTex) * _Color;
-
     float2 f = IN.uv_Stimulation;
     f *= _Density;
 
@@ -119,10 +129,8 @@ float4 StandardProjection(Input IN)
     return BlendStimulationTexture(mainTex, beansTex);
 }
 
-float4 TriplanarProjection(Input IN)
+float4 TriplanarProjection(Input IN, float4 mainTex)
 {
-    float4 mainTex = tex2D(_MainTex, IN.uv_MainTex) * _Color;
-
     // Use absolute value of normal as texture weights.
     float3 localNormal = mul(unity_WorldToObject, IN.worldNormal);
     half3 weights = abs(localNormal);

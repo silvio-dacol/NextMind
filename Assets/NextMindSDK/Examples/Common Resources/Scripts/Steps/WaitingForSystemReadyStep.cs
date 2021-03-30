@@ -108,13 +108,13 @@ namespace NextMind.Examples.Steps
         }
 
         /// <inheritdoc />
-        protected internal override bool GoToNextStepAllowed()
+        public override bool GoToNextStepAllowed()
         {
             return !autoStartNextStep && NeuroManager.Instance.IsReady();
         }
 
         /// <inheritdoc />
-        protected internal override bool GoToPreviousStepAllowed()
+        public override bool GoToPreviousStepAllowed()
         {
             return false;
         }

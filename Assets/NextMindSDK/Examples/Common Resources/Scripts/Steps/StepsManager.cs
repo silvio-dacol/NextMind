@@ -4,7 +4,7 @@ using UnityEngine.Events;
 namespace NextMind.Examples.Steps
 {
 	/// <summary>
-	/// The StepsManager is keeping track of the known <see cref="AbstractStep"/>s an provide function to move from one step to another 
+	/// The StepsManager is keeping track of the known <see cref="AbstractStep"/>s and provide functions to move from one step to another 
 	/// while triggering basic events as <see cref="AbstractStep.OnEnterStep"/>, <see cref="AbstractStep.OnExitStep"/>, etc...
 	/// </summary>
 	public class StepsManager : MonoBehaviour
@@ -96,7 +96,7 @@ namespace NextMind.Examples.Steps
 			OnClickOnNextStep(false);
 		}
 
-		internal void OnClickOnNextStep(bool forceAllow = false)
+		public void OnClickOnNextStep(bool forceAllow = false)
 		{
 			if (!forceAllow && !steps[currentStepIndex].GoToNextStepAllowed())
 			{
@@ -118,7 +118,7 @@ namespace NextMind.Examples.Steps
 			OnClickOnPreviousStep(false);
 		}
 
-		internal void OnClickOnPreviousStep(bool forceAllow = false)
+		public void OnClickOnPreviousStep(bool forceAllow = false)
 		{
 			if (!forceAllow && !steps[currentStepIndex].GoToPreviousStepAllowed())
 			{

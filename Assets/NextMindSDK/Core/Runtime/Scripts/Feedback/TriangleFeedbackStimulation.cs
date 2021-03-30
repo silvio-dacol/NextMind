@@ -52,6 +52,9 @@ public class TriangleFeedbackStimulation : MonoBehaviour
 
             neuroTag.onBecameActivated.AddListener(OnNeuroTagActivationChanged);
             neuroTag.onBecameDeactivated.AddListener(OnNeuroTagActivationChanged);
+
+            // Set initial state.
+            OnNeuroTagActivationChanged();
         }
 
         // Force to create an instance of the given material.

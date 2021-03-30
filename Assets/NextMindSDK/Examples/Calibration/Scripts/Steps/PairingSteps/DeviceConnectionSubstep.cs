@@ -94,7 +94,7 @@ namespace NextMind.Examples.Calibration
             neuroManager.onDeviceConnected.RemoveListener(OnDeviceConnected);
         }
 
-        protected internal override bool GoToNextStepAllowed()
+        public override bool GoToNextStepAllowed()
         {
             // We allow to go to the next step only if a device is connected.
             return devicesByID.Count > 0;

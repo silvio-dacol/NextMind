@@ -30,12 +30,12 @@ namespace NextMind.Examples.Calibration
             subStepsManager.Restart();
         }
 
-        protected internal override bool GoToNextStepAllowed()
+        public override bool GoToNextStepAllowed()
         {
             return !insidePairingSteps && NeuroManager.Instance.ConnectedDevices.Count > 0;
         }
 
-        protected internal override bool GoToPreviousStepAllowed()
+        public override bool GoToPreviousStepAllowed()
         {
             return !insidePairingSteps;
         }

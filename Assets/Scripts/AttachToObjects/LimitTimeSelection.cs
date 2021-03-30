@@ -11,7 +11,7 @@ public class LimitTimeSelection : MonoBehaviour
     private UsefulVariables usefulVariables;
 
     //Time limit of 120 seconds (used just if the user cannot select the hologram)
-    public float timeLimit = 120f;
+    [SerializeField] private float timeLimit = 120f;
 
     void Start()
     {

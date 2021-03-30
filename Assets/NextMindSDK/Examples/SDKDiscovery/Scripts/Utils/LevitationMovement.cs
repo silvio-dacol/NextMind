@@ -63,6 +63,11 @@ namespace NextMind.Examples.Discovery
         /// </summary>
         private float currentWideOscillationY;
 
+        /// <summary>
+        /// The timer used to modulate the amplitude.
+        /// </summary>
+        private float amplitudeTimer = 0f;
+
         private void Start()
         {
             if (hostTransform == null)
@@ -91,7 +96,9 @@ namespace NextMind.Examples.Discovery
             currentWideOscillationY = Mathf.Lerp(currentWideOscillationY, targetY, 10 * Time.deltaTime);
             
             // Add the levitation effect.
-            newPosition.y = currentWideOscillationY + amplitude * Mathf.Sin(frequency * Time.time);
+            newPosition.y = currentWideOscillationY + amplitude * Mathf.Sin(frequency * amplitudeTimer);
+
+            amplitudeTimer += Time.deltaTime;
 
             // Finally set the position.
             hostTransform.position = newPosition;

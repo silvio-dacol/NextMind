@@ -206,8 +206,6 @@ namespace NextMind.Examples.Calibration
 
         private void OnScanningStopped()
         {
-            NeuroManager.Instance.StartScanning();
-
             ShowLoading(false);
         }
 

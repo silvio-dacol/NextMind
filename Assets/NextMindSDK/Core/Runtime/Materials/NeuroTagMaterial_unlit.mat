@@ -76,8 +76,12 @@ Material:
     - _AlphaCutoff: 1
     - _BeansDensity: 1
     - _Blend: 0
+    - _BlendOp: 0
     - _BumpScale: 1
+    - _ColorWriteMask: 15
     - _ConstantSize: 1
+    - _CullMode: 2
+    - _CustomMode: 1
     - _Cutoff: 0.58
     - _Density: 4
     - _DetailNormalMapScale: 1
@@ -92,8 +96,10 @@ Material:
     - _Mix: 0.5
     - _Mode: 1
     - _OcclusionStrength: 1
+    - _OverlayBlending: 0
     - _Parallax: 0.02
     - _Redify: 1
+    - _RenderQueueOverride: -1
     - _ScreenRatio: 1.777
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -101,10 +107,16 @@ Material:
     - _StimulationDensity: 1
     - _UVSec: 0
     - _UseMainTexAlpha: 1
+    - _WireThickness: 100
+    - _ZOffsetFactor: 0
+    - _ZOffsetUnits: 0
+    - _ZTest: 4
     - _ZWrite: 1
     m_Colors:
+    - _BaseColor: {r: 0, g: 0, b: 0, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _Tiling: {r: 8, g: 6, b: 0, a: 0}
+    - _WireColor: {r: 1, g: 1, b: 1, a: 1}
