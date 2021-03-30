@@ -28,10 +28,10 @@ public class ExportDataFile : MonoBehaviour
         if (usefulVariables.selectionCount == usefulVariables.numberOfSelections && exit != 1)
         {
             //I create a string which can contain inside all the components of my arrays
-            boxOrNoBox = String.Join("    ", usefulVariables.boxOrNoBox);
-            accuracyOfSingleSelection = String.Join("    ", usefulVariables.accuracyOfSingleSelection);
+            boxOrNoBox = String.Join("     ", usefulVariables.boxOrNoBox);
+            accuracyOfSingleSelection = String.Join("     ", usefulVariables.accuracyOfSingleSelection);
             matrixCase = String.Join("    ", usefulVariables.matrixCase);
-            timeOfSingleSelection = String.Join("    ", usefulVariables.timeOfSingleSelection);
+            timeOfSingleSelection = String.Join("     ", usefulVariables.timeOfSingleSelection);
 
             File.AppendAllText(usefulVariables.filePath, "" +
                 

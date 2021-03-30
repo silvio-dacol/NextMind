@@ -10,8 +10,8 @@ public class LimitTimeSelection : MonoBehaviour
     //Define the usefulVariables class
     private UsefulVariables usefulVariables;
 
-    //Time limit of 30 seconds (gives pressure to the user)
-    public float timeLimit = 30f;
+    //Time limit of 120 seconds (used just if the user cannot select the hologram)
+    public float timeLimit = 120f;
 
     void Start()
     {

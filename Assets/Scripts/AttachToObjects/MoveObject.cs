@@ -31,16 +31,16 @@ public class MoveObject : MonoBehaviour
     {
         if (gameObject.scene.name == "Task3")
         {
-            speed = 0.2f;
+            speed = 0.3f;
             range = 0.5f;
 
             //I define the deltaFrames to change direction just between 700 and 900
-            deltaFrames = Random.Range(300, 500);
+            deltaFrames = Random.Range(250, 400);
         }
 
         else if (gameObject.scene.name == "Task4")
         {
-            speed = 0.4f;
+            speed = 0.6f;
             range = 0.5f;
 
             //I define the deltaFrames to change direction just between 700 and 900
