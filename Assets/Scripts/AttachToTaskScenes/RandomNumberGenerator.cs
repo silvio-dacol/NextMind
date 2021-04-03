@@ -34,16 +34,16 @@ public class RandomNumberGenerator : MonoBehaviour
         //This for() controls if there will be the box or not on the objects
         for (int i = 0; i < usefulVariables.numberOfSelections; i++)
         {
-            //There will be the 70% possibilities to be in the case of a box and the 30% not to be
-            if (Random.Range(0, 10) < 7)
-            {
+            //There will be the 70 % possibilities to be in the case of a box and the 30 % not to be
+            //if (Random.Range(0, 10) < 7)
+            //{
                 usefulVariables.boxOrNoBox[i] = 1;
-            }
+            //}
 
-            else
-            {
-                usefulVariables.boxOrNoBox[i] = 0;
-            }
+            //else
+            //{
+            //    usefulVariables.boxOrNoBox[i] = 0;
+            //}
         }
     }
 

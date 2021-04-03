@@ -39,16 +39,12 @@ public class ExportDataFile : MonoBehaviour
                 
                 "Device:                           " + usefulVariables.device + "\n" +
                 "Number of Selections:             " + usefulVariables.numberOfSelections + "\n\n" +
-                
-                "Accuracy:\n" + 
+                 
                 "Right Selections:                 " + usefulVariables.rightObjectSelection + "\n" +
                 "Wrong Selections:                 " + usefulVariables.wrongObjectSelection + "\n" +
-                "Signal is present? (Yellow Box)   " + boxOrNoBox +"\n" +
-                "Right or Wrong:                   " + accuracyOfSingleSelection + "\n" +
-                "Signal Detection Theory Case:     " + matrixCase + "\n\n" +
+                "Total Time in the Scene:          " + usefulVariables.totalTimeInTheScene + "\n\n" +
                 
-                "Time:\n" +
-                "Total Time in the Scene:          " + usefulVariables.totalTimeInTheScene + "\n" +
+                "Right or Wrong:                   " + accuracyOfSingleSelection + "\n" +
                 "Time per Selection:               " + timeOfSingleSelection.ToString() + "\n\n\n");
 
 

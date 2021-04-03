@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class ReduceObjectDimension : MonoBehaviour
 {
-    public float localScale = 1;
+    public float localScale = 0.6f;
 
     // Start is called before the first frame update
     void Start()
@@ -15,15 +15,15 @@ public class ReduceObjectDimension : MonoBehaviour
         Transform objectContainer = GameObject.Find("ObjectContainer").transform;
 
         //I get the scene name to differentiate dimensions of the objects
-        if (gameObject.scene.name == "Task2")
-        {
-            localScale = 1f;
-        }
+        //if (gameObject.scene.name == "Task2")
+        //{
+            //localScale = 1f;
+        //}
 
-        else
-        {
-            localScale = 0.4f;
-        }
+        //else
+        //{
+            localScale = 0.6f;
+        //}
 
         //I reduce the dimension of the objects in the scene
         for (int i = 0; i < objectContainer.childCount; i++)

@@ -28,8 +28,12 @@ public class Start : MonoBehaviour
         RandomNumberGenerator randomNumberGenerator = GameObject.Find("RandomNumberGenerator").GetComponent<RandomNumberGenerator>();
         randomNumberGenerator.RandomNumber();
 
-        //I get the ToggleCollector of the SceneMenu and I deactivate it
-        GameObject.Find("ToggleCollector").GetComponent<Transform>().localScale = new Vector3(0f, 0f, 0f);
+        if(gameObject.scene.name != "Tutorial")
+        {
+            //I get the ToggleCollector of the SceneMenu and I deactivate it
+            GameObject.Find("ToggleCollector").GetComponent<Transform>().localScale = new Vector3(0f, 0f, 0f);
+        }
+
 
         //If the usefulVariables.boxOrNoBox == 1 activate the box over the element (Just in that case)
         if(usefulVariables.boxOrNoBox[0] == 1)

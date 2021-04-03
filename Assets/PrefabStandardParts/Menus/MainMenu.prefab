@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 907285774035865010}
   - component: {fileID: 6633007965949718820}
   m_Layer: 0
-  m_Name: ExitAndCalibration
+  m_Name: TutorialAndCalibration
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -182,8 +182,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2154276853153888073}
-  m_LocalRotation: {x: 0.06162845, y: 0.70441604, z: -0.06162845, w: 0.70441604}
-  m_LocalPosition: {x: 2, y: -0.3, z: 0}
+  m_LocalRotation: {x: 0.08715578, y: 0, z: 0, w: 0.9961947}
+  m_LocalPosition: {x: 0, y: -0.3, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8195814846314804220}
@@ -191,7 +191,7 @@ Transform:
   - {fileID: 5474626002733226643}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 10, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
 --- !u!114 &4447723510550249322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,6 +322,11 @@ PrefabInstance:
     - target: {fileID: 7385196104591117741, guid: b590a8761a073124a99e725def96dc21,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7385196104591117741, guid: b590a8761a073124a99e725def96dc21,
+        type: 3}
+      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7385196105176392993, guid: b590a8761a073124a99e725def96dc21,
@@ -497,7 +502,12 @@ PrefabInstance:
     - target: {fileID: 7118740021871656483, guid: b6804131aa7771045bb81247a0297b58,
         type: 3}
       propertyPath: m_Name
-      value: ExitExperiment
+      value: Tutorial
+      objectReference: {fileID: 0}
+    - target: {fileID: 7158884007323720047, guid: b6804131aa7771045bb81247a0297b58,
+        type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6804131aa7771045bb81247a0297b58, type: 3}

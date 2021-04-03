@@ -1,0 +1,23 @@
+Date: 2021-04-03 12:44:58 PM
+Name: 
+Age: 
+Gender: 
+
+
+Tutorial
+
+Total Time in the Tutorial:          39.7782
+
+Task1
+
+Device:                           HoloLens
+Number of Selections:             20
+
+Right Selections:                 19
+Wrong Selections:                 1
+Total Time in the Scene:          55.89808
+
+Right or Wrong:                   1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     0     1
+Time per Selection:               1     2     3     2     2     3     2     3     3     3     2     2     3     8     2     4     2     2     4     3
+
+

@@ -28,11 +28,12 @@ public class MoveObject : MonoBehaviour
     private int initialFrames;
 
     private void Start()
-    {
+    {            
+        range = 0.5f;
+
         if (gameObject.scene.name == "Task3")
         {
-            speed = 0.3f;
-            range = 0.5f;
+            speed = 0.5f;
 
             //I define the deltaFrames to change direction just between 700 and 900
             deltaFrames = Random.Range(250, 400);
@@ -40,8 +41,7 @@ public class MoveObject : MonoBehaviour
 
         else if (gameObject.scene.name == "Task4")
         {
-            speed = 0.6f;
-            range = 0.5f;
+            speed = 1f;
 
             //I define the deltaFrames to change direction just between 700 and 900
             deltaFrames = Random.Range(150, 250);
@@ -55,7 +55,7 @@ public class MoveObject : MonoBehaviour
         }
 
         //It's a random direction for the movement of that specific object
-        deltaPosition = new Vector3(Random.Range(-range, range), Random.Range(-range, range), Random.Range(-range, range));
+        deltaPosition = new Vector3(Random.Range(-range, range), Random.Range(0, range), 0);
 
         //This will be the actual direction of my movement
         normalisedPositionVector = deltaPosition.normalized;
