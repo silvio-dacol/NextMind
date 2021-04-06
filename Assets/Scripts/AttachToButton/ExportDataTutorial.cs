@@ -4,6 +4,8 @@ using UnityEngine;
 using System;
 using System.IO;
 
+// Script to be attached to the MainMenu button in the scenes
+
 public class ExportDataTutorial : MonoBehaviour
 {
     UsefulVariables usefulVariables;
@@ -20,6 +22,6 @@ public class ExportDataTutorial : MonoBehaviour
 
         gameObject.scene.name + "\n\n" +
 
-        "Total Time in the Tutorial:          " + usefulVariables.totalTimeInTheScene + "\n\n");
+        "Total Time in the Tutorial:          " + usefulVariables.totalTimeInTheScene + "\n\n\n");
     }
 }

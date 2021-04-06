@@ -20,7 +20,7 @@ public class SelectionColour : MonoBehaviour
         Renderer materialRenderer = gameObject.transform.parent.gameObject.GetComponent<Renderer>();
 
         //Call SetColor using the shader property name "_Color"
-        materialRenderer.material.SetColor("_Color", new Color32(175, 175, 175, 255));
+        materialRenderer.material.SetColor("_Color", new Color32(45, 33, 176, 255));
     }
 
     private void Deselection()
@@ -29,6 +29,6 @@ public class SelectionColour : MonoBehaviour
         Renderer materialRenderer = gameObject.transform.parent.gameObject.GetComponent<Renderer>();
 
         //Call SetColor using the shader property name "_Color"
-        materialRenderer.material.SetColor("_Color", new Color32(41, 41, 41, 255));
+        materialRenderer.material.SetColor("_Color", new Color32(128, 128, 128, 255));
     }
 }

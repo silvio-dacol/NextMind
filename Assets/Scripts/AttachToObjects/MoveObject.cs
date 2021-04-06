@@ -44,7 +44,7 @@ public class MoveObject : MonoBehaviour
             speed = 1f;
 
             //I define the deltaFrames to change direction just between 700 and 900
-            deltaFrames = Random.Range(150, 250);
+            deltaFrames = Random.Range(150, 200);
         }
 
         if (gameObject.name == "NoBoxObject")
