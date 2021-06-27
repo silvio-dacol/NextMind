@@ -1,5 +1,2 @@
 # NextMind
-The app I will use for my thesis project experiments.
-
-# Tips
-1. 
+The app I used for my thesis project experiments.
